@@ -4,8 +4,8 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
-[trello]: https://trello.com
+[heroku]: https://insta-travelgram.herokuapp.com/
+[trello]: https://trello.com/b/fa9hOu1T/travelgram
 
 ## Minimum Viable Product
 
