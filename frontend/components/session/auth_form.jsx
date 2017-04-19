@@ -49,17 +49,17 @@ class AuthForm extends React.Component {
 
     navLink() {
       if (this.props.formType === 'login'){
-        return <Link to="/signup">signup</Link>;
+        return <Link to="/signup">Sign up</Link>;
       }else{
-        return <Link to="/login">login</Link>;
+        return <Link to="/login">Log in</Link>;
       }
     }
 
-    fromSubmitBtn() {
+    formSubmitBtn() {
       if (this.props.formType === 'login'){
-        return <button className="demo-login">Login</button>;
+        return <button className="demo-login">Log in</button>;
       }else{
-        return <button className="demo-login">Signup</button>;
+        return <button className="demo-login">Sign up</button>;
       }
     }
 
@@ -89,7 +89,6 @@ class AuthForm extends React.Component {
         return(
           <article className="landing-page-main">
             <div className="landing-page-img">
-              img
             </div>
 
             <div className="landing-page-intro">
@@ -107,7 +106,7 @@ class AuthForm extends React.Component {
                   <input type="text" onChange={this.update("name")} value={this.state.name} placeholder="Full Name"/><br/>
                   <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/><br/>
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
-                  {this.fromSubmitBtn()}
+                  {this.formSubmitBtn()}
 
                   {this.renderErrors()}
                 </form>
@@ -124,7 +123,6 @@ class AuthForm extends React.Component {
         return(
           <article className="landing-page-main">
             <div className="landing-page-img">
-              img
             </div>
 
             <div className="landing-page-intro">
@@ -135,7 +133,7 @@ class AuthForm extends React.Component {
                 <form className="login-box-form" onSubmit={this.handleSubmit}>
                   <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/><br/>
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
-                  {this.fromSubmitBtn()}
+                  {this.formSubmitBtn()}
 
                   {this.renderErrors()}
                 </form>

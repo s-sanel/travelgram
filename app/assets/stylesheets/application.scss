@@ -16,6 +16,29 @@
  @import "reset.scss";
  @import "font-awesome/css/font-awesome.min.css";
 
+body,button,input,textarea{
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;
+  line-height:18px;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+a{
+  color: #3897f0;
+  text-decoration:none;
+}
+
+a:visited{
+  color:#003569;
+  text-decoration:none
+}
+a:active{
+  opacity:.5
+}
+
  #root, html, body {
    height: 100%;
    box-sizing: border-box;
@@ -43,8 +66,8 @@ footer {
 }
 
 h1 {
-  font-size: 30px;
-  margin: 22px auto 8px;
+  font-size: 36px;
+  margin: 22px auto 14px;
   text-align: center;
 }
 
@@ -68,10 +91,12 @@ h2 {
 
 .landing-page-img {
   align-self: center;
-  width: 354px;
+  width: 454px;
   height: 618px;
-  background-color: #eee;
-  margin: 0 10px
+  background-color: #fafafa;
+  background-image: url('/assets/homepage.png');
+  background-repeat: no-repeat;
+  margin: 0 10px;
 }
 
 .landing-page-intro{
@@ -134,7 +159,6 @@ h2 {
   background: #3897f0;
   border-color: #3897f0;
   color: #fff;
-  cursor: pointer;
   font-size: 14px;
   padding: 8px;
 }
@@ -146,4 +170,8 @@ h2 {
 
 .center {
   text-align: center;
+}
+
+@media only screen and (max-width : 768px) {
+  .landing-page-img { display: none; }
 }
