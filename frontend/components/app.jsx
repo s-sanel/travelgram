@@ -1,14 +1,17 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container'
+import Footer from './shared/footer'
 
 
 const App = ({ children }) => (
-  <div>
-    <hr />
-    { children }
-  </div>
+  <section id="root">
+    <section>
+      { children }
+    </section>
+
+    <Footer />
+  </section>
 );
 
-// <h1>Welcome to travelgram</h1>
 // <GreetingContainer />
 export default App;
