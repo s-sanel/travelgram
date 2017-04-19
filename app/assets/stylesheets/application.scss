@@ -14,6 +14,7 @@
  *= require_self
  */
  @import "reset.scss";
+ @import "font-awesome/css/font-awesome.min.css";
 
  #root, html, body {
    height: 100%;
@@ -35,25 +36,33 @@
 }
 
 footer {
-  border: 1px solid blue;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 25px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin: 22px auto 8px;
   text-align: center;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
 }
 
 .landing-page-main{
   box-sizing: border-box;
   /*border: 1px solid yellow;*/
-  display: flex;
   margin: 30px auto 0;
+  display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
 }
 
@@ -77,27 +86,31 @@ h2 {
   border: 1px solid #e6e6e6;
   border-radius: 1px;
   margin: 10px 0 10px;
-  padding: 10px 0;
+  padding: 25px;
+  text-align: center;
 }
 
  .login-box {
    background-color: #fff;
    border: 1px solid #e6e6e6;
    border-radius: 1px;
-   /*padding: 10px;*/
-   /*margin: 20px auto;*/
-   /*width: 300px;*/
+   margin: 0 0 10px;
+   padding: 10px 25px;
 
    flex: 1;
  }
 
- .login-form-box {
-   display: flex;
-   flex-direction: column;
-   /*justify-content: center;*/
- }
+.login-box-logo {
+  border: 0px solid black;
+}
 
- .login-form-box input{
+ .login-box-form {
+  display: flex;
+  flex-direction: column;
+ /*justify-content: center;*/
+}
+
+ .login-box-form input{
    background-color: white;
    border: 1px solid #dbdbdb;
    border-radius: 3px;
@@ -118,8 +131,19 @@ h2 {
  }
 
  .demo-login {
-   background: #3897f0;
-    border-color: #3897f0;
-    color: #fff;
-    cursor: pointer;
- }
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.errors{
+  padding: 0px;
+  margin-top: 20px;
+}
+
+.center {
+  text-align: center;
+}

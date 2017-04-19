@@ -9,6 +9,7 @@ class AuthForm extends React.Component {
       super(props);
       this.state = {username: "", password: "", email: "", name: ""};
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.demoLogin = this.demoLogin.bind(this);
     }
 
     componentDidMount(){
@@ -16,9 +17,14 @@ class AuthForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-      if (this.props.formType !== newProps.formType) {
+        if (this.props.formType !== newProps.formType) {
         this.props.clearErrors();
       }
+    }
+
+    demoLogin(e){
+      e.preventDefault();
+      this.props.demoLogin().then(() => this.props.router.push('/'));
     }
 
     handleSubmit(e){
@@ -49,6 +55,14 @@ class AuthForm extends React.Component {
       }
     }
 
+    fromSubmitBtn() {
+      if (this.props.formType === 'login'){
+        return <button className="demo-login">Login</button>;
+      }else{
+        return <button className="demo-login">Signup</button>;
+      }
+    }
+
     renderErrors() {
       if (this.props.errors){
         let keys = Object.keys(this.props.errors);
@@ -56,13 +70,15 @@ class AuthForm extends React.Component {
 // now errors are passed as an array, before it was an object!!
 //change this
         return(
-          <ul>
-            {keys.map((key, i) => (
-              <li key={`error-${i}`} className="red-text">
-                {key}:{this.props.errors[key]}
-              </li>
-            ))}
-          </ul>
+          <div className="errors">
+            <ul>
+              {keys.map((key, i) => (
+                <li key={`error-${i}`} className="red-text">
+                  {key}:{this.props.errors[key]}
+                </li>
+              ))}
+            </ul>
+          </div>
         );
       }
   	}
@@ -78,17 +94,21 @@ class AuthForm extends React.Component {
 
             <div className="landing-page-intro">
               <div className="login-box">
-                <h1>Instagram</h1>
-                <form className="login-form-box" onSubmit={this.handleSubmit}>
+                <div className="login-box-logo">
+                  <h1>Travelgram</h1>
+                </div>
+                <form className="login-box-form" onSubmit={this.handleSubmit}>
                   <h2>Sign up to see photos and videos from your friends.</h2> <br/>
-                  <button type="submit" className="demo-login">Demo Login</button> <br/>
+                  <button type="submit" onClick={this.demoLogin} className="demo-login">Demo Login</button> <br/>
+                  <div className="center">
+                    - OR -
+                  </div><br/>
                   <input type="text" onChange={this.update("email")} value={this.state.email} placeholder="Email" /><br/>
                   <input type="text" onChange={this.update("name")} value={this.state.name} placeholder="Full Name"/><br/>
-                  <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/>
+                  <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/><br/>
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
+                  {this.fromSubmitBtn()}
 
-
-                  <input className="demo-login" type="submit" name="Submit"/>
                   {this.renderErrors()}
                 </form>
               </div>
@@ -109,13 +129,14 @@ class AuthForm extends React.Component {
 
             <div className="landing-page-intro">
               <div className="login-box">
-                <h1>Instagram</h1>
-                <form className="login-form-box" onSubmit={this.handleSubmit}>
-                  <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/>
-
+                <div className="login-box-logo">
+                  <h1>Travelgram</h1>
+                </div>
+                <form className="login-box-form" onSubmit={this.handleSubmit}>
+                  <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/><br/>
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
+                  {this.fromSubmitBtn()}
 
-                  <input className="demo-login" type="submit" name="Submit"/>
                   {this.renderErrors()}
                 </form>
               </div>
