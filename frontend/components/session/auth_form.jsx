@@ -6,12 +6,9 @@ import ErrorList from '../shared/error_list';
 class AuthForm extends React.Component {
 
     constructor(props) {
-      // debugger
       super(props);
       this.state = {username: "", password: "", email: "", name: ""};
       this.handleSubmit = this.handleSubmit.bind(this);
-      // this.handleUser = this.handleUser.bind(this);
-      // this.handlePassword = this.handlePassword.bind(this);
     }
 
     componentDidMount(){
@@ -21,16 +18,9 @@ class AuthForm extends React.Component {
     handleSubmit(e){
       e.preventDefault();
       const user = this.state;
-      this.props.processForm({user});
+      this.props.processForm({user})
+        .then(() => this.props.router.push('/'));
     }
-
-    // handleUser(e) {
-    //   this.setState({username: e.currentTarget.value});
-    // }
-    //
-    // handlePassword(e) {
-    //   this.setState({password: e.currentTarget.value});
-    // }
 
     update(field) {
   		return e => this.setState({
@@ -47,7 +37,6 @@ class AuthForm extends React.Component {
     }
 
     renderErrors() {
-      // debugger
       if (this.props.errors){
         let keys = Object.keys(this.props.errors);
 // erros are passed as an array now - changed controller/api from @user.errors to @user.errors.full_messages

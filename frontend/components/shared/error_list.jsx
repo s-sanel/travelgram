@@ -7,8 +7,6 @@ export default function ErrorList({ errors }) {
     <li key={ error }>{ error }</li>
   );
 
-  debugger
-
   return (
     <ul className="red-text">
       { errorItems }

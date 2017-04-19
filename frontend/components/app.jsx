@@ -4,11 +4,11 @@ import GreetingContainer from './greeting/greeting_container'
 
 const App = ({ children }) => (
   <div>
-    <h1>Welcome to travelgram</h1>
-    <GreetingContainer />
     <hr />
     { children }
   </div>
 );
 
+// <h1>Welcome to travelgram</h1>
+// <GreetingContainer />
 export default App;
