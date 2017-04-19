@@ -15,6 +15,12 @@ class AuthForm extends React.Component {
       this.props.clearErrors();
     }
 
+    componentWillReceiveProps(newProps){
+      if (this.props.formType !== newProps.formType) {
+        this.props.clearErrors();
+      }
+    }
+
     handleSubmit(e){
       e.preventDefault();
       const user = this.state;
@@ -79,8 +85,8 @@ class AuthForm extends React.Component {
                   <input type="text" onChange={this.update("email")} value={this.state.email} placeholder="Email" /><br/>
                   <input type="text" onChange={this.update("name")} value={this.state.name} placeholder="Full Name"/><br/>
                   <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/>
-                  <ErrorList errors={ this.props.errors.username } /><br/>
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
+
 
                   <input className="demo-login" type="submit" name="Submit"/>
                   {this.renderErrors()}
@@ -106,7 +112,7 @@ class AuthForm extends React.Component {
                 <h1>Instagram</h1>
                 <form className="login-form-box" onSubmit={this.handleSubmit}>
                   <input onChange={this.update("username")} type="text" value={this.state.username} placeholder="Username"/>
-                  <ErrorList errors={ this.props.errors.username } /><br/>
+
                   <input onChange={this.update("password")} type="password" value={this.state.password} placeholder="Password"/><br/>
 
                   <input className="demo-login" type="submit" name="Submit"/>
@@ -125,4 +131,6 @@ class AuthForm extends React.Component {
     }
 
 }
+// <ErrorList errors={ this.props.errors.username } /><br/>
+// <ErrorList errors={ this.props.errors.username } /><br/>
 export default withRouter(AuthForm);
