@@ -15,15 +15,27 @@
  */
  @import "reset.scss";
  @import "font-awesome/css/font-awesome.min.css";
+ @font-face {
+  font-family: 'Billabong';
+  src: url('custom-fonts/billabong.eot'), url('custom-fonts/billabong.ttf');
+}
 
 body,button,input,textarea{
   font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:14px;
-  line-height:18px;
+  // line-height:18px;
 }
 
 a, button {
   cursor: pointer;
+}
+button{
+  border: 2px solid #666;
+  border-radius: 5px;
+}
+
+button:focus{
+  outline:0px;
 }
 
 a{
@@ -32,7 +44,7 @@ a{
 }
 
 a:visited{
-  color:#003569;
+  color: #3897f0;
   text-decoration:none
 }
 a:active{
@@ -66,9 +78,11 @@ footer {
 }
 
 h1 {
-  font-size: 36px;
+  font-family: 'Billabong';
+  font-size: 46px;
   margin: 22px auto 14px;
   text-align: center;
+  border: 0px solid whitesmoke;
 }
 
 h2 {
@@ -76,6 +90,8 @@ h2 {
   line-height: 20px;
   margin: 0 40px 10px;
   text-align: center;
+  color: #999;
+  font-weight: 600;
 }
 
 .landing-page-main{
@@ -100,16 +116,18 @@ h2 {
 }
 
 .landing-page-intro{
-  margin-top: 12px;
+  margin-top: 20px;
   max-width: 350px;
   flex-grow: 1;
   justify-content: center;
 }
 
-.landing-intro-footer{
+.landing-intro-nav{
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 1px;
+  color: #262626;
+  font-size: 14px;
   margin: 10px 0 10px;
   padding: 25px;
   text-align: center;
@@ -120,7 +138,7 @@ h2 {
    border: 1px solid #e6e6e6;
    border-radius: 1px;
    margin: 0 0 10px;
-   padding: 10px 25px;
+   padding: 25px;
 
    flex: 1;
  }
@@ -147,10 +165,6 @@ h2 {
    width: 100%;
  }
 
- .red-text{
-   color: red;
- }
-
  li {
    list-style: none;
  }
@@ -166,6 +180,7 @@ h2 {
 .errors{
   padding: 0px;
   margin-top: 20px;
+  color: red;
 }
 
 .center {

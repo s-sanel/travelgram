@@ -73,8 +73,8 @@ class AuthForm extends React.Component {
           <div className="errors">
             <ul>
               {keys.map((key, i) => (
-                <li key={`error-${i}`} className="red-text">
-                  {key}:{this.props.errors[key]}
+                <li key={`error-${i}`}>
+                  {key}: {this.props.errors[key]}
                 </li>
               ))}
             </ul>
@@ -112,7 +112,7 @@ class AuthForm extends React.Component {
                 </form>
               </div>
 
-              <div className="landing-intro-footer">
+              <div className="landing-intro-nav">
                 <p>{this.navText()} {this.navLink()}</p>
               </div>
             </div>
@@ -139,7 +139,7 @@ class AuthForm extends React.Component {
                 </form>
               </div>
 
-              <div className="landing-intro-footer">
+              <div className="landing-intro-nav">
                 <p>{this.navText()} {this.navLink()}</p>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = ({ children }) => (
   <footer>
-    <h3>Footer nav links...</h3>
+    <h3>...</h3>
 
   </footer>
 );

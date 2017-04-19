@@ -4,7 +4,7 @@ import TestPosts from './test0'
 
 const Test = ({ children }) => (
   <div>
-    <h1><i className="fa fa-instagram" aria-hidden="true"></i>  Welcome to Homepage</h1>
+    <h1><i className="fa fa-instagram" aria-hidden="true"></i> Travelgram, Hello Lelo </h1>
     <GreetingContainer />
     <TestPosts />
 
