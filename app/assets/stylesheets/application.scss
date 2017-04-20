@@ -240,10 +240,11 @@ h2 {
   font-family: "Billabong";
   font-size: 32px;
   min-width: 160px;
+  display: flex;
+  color: #333;
 }
 .search {
   // min-width: 80px;
-  // border: 1px solid red;
   flex: 1;
   align-self: center;
   display: flex;
@@ -282,6 +283,12 @@ h2 {
   // border: 1px solid red;
   background-color: #fafafa;
   flex: 1;
+}
+
+.main-nav-logo-text {
+  border-left: 1px solid #999;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 

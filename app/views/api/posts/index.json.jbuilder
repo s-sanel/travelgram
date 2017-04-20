@@ -1,1 +1,5 @@
-json.array! @posts, partial: 'post', as: :post
+@posts.each do |post|
+  json.set! post.id do
+    json.partial! 'post', post: post
+  end
+end

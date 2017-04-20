@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.store = configureStore();
   // let store = configureStore();
   //
-  window.receiveAllPosts = receiveAllPosts;
-  window.fetchPosts = fetchPosts;
-  window.fetchPost = fetchPost;
-  window.createPost = createPost;
-  window.updatePost = updatePost;
-  window.deletePost = deletePost;
+  // window.receiveAllPosts = receiveAllPosts;
+  // window.fetchPosts = fetchPosts;
+  // window.fetchPost = fetchPost;
+  // window.createPost = createPost;
+  // window.updatePost = updatePost;
+  // window.deletePost = deletePost;
 
 //just for testing!
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
+  // window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

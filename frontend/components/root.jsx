@@ -4,7 +4,7 @@ import React from 'react';
 import App from './app'
 import AuthFormContainer from './session/auth_form_container';
 
-import Posts from './posts';
+import Posts from './posts/posts';
 // import PostsFeed from './posts_feed';
 
 const Root = ({ store }) => {
