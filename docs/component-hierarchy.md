@@ -41,6 +41,6 @@
 | "/signup" | "AuthFormContainer" |
 | "/posts"    | "PhotosIndexContainer" |
 | "/posts/:postId" | "PostShowContainer" |
-| "/users/:userId/photos/:photoId" | "PostShowContainer" |
+<!-- | "/users/:userId/photos/:photoId" | "PostShowContainer" | -->
 | "/users/:userId" | "UserProfileContainer" |
 | "/photo-form" | "PostPhotoContainer" |

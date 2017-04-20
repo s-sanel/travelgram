@@ -104,6 +104,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   width: 100%;
+  flex:1;
 }
 
 .landing-page-img {
@@ -238,13 +239,43 @@ h2 {
 .main-nav-logo {
   font-family: "Billabong";
   font-size: 32px;
+  min-width: 160px;
 }
 .search {
-
+  // min-width: 80px;
+  // border: 1px solid red;
+  flex: 1;
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 .main-nav-links {
+  min-width: 140px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 0px;
+  font-size: 20px;
+  font-weight: 100;
+}
 
+.main-nav-links a {
+  color: #666;
+  text-decoration: none;
+}
 
+.main-nav-explore{
+  margin-left: 20px;
+}
+.main-nav-user{
+  margin-left: 20px;
+}
+.upload-photo{
+  margin-left: 20px;
+}
+
+.main-nav-logout {
+  margin-left: 20px;
 }
 
 .main-content{
@@ -253,6 +284,31 @@ h2 {
   flex: 1;
 }
 
+
+// SEACH input
+form.seach-form input {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: black;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-form input[type=text]:focus {
+    width: 100%;
+}
+
 @media only screen and (max-width : 768px) {
   .landing-page-img { display: none; }
+}
+
+@media only screen and (max-width : 500px) {
+  .search { display: none; }
 }

@@ -30,13 +30,13 @@
 
 ### Likes
 
-- `POST /api/photos/:photoId/likes`
-- `DELETE /api/photos/:photoId/likes/:id`
+- `POST /api/likes`
+- `DELETE /api/likes/:id`
 
 ### Comments
 
-- `POST /api/photos/:photoId/comments`
-- `DELETE /api/photos/:photoId/comments/:id`
+- `POST /api/comments`
+- `DELETE /api/comments/:id`
 
 ### Follows
 
