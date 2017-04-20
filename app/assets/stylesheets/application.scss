@@ -216,6 +216,43 @@ h2 {
   margin: 0 18px;
 }
 
+.red {
+  border: 1px solid red;
+}
+// ------------- data-root posts page ------------- //
+.data-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-nav-bar{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.main-nav-logo {
+  font-family: "Billabong";
+  font-size: 32px;
+}
+.search {
+
+}
+.main-nav-links {
+
+
+}
+
+.main-content{
+  // border: 1px solid red;
+  background-color: #fafafa;
+  flex: 1;
+}
+
 @media only screen and (max-width : 768px) {
   .landing-page-img { display: none; }
 }

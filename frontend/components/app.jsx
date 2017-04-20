@@ -5,13 +5,12 @@ import Footer from './shared/footer'
 
 const App = ({ children }) => (
   <section id="root">
-    <section>
       { children }
-    </section>
-
     <Footer />
   </section>
 );
 
+// <section className="data-root">
+// </section>
 // <GreetingContainer />
 export default App;

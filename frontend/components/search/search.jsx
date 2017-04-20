@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-class Greeting extends React.Component {
+class Search extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,21 +15,14 @@ class Greeting extends React.Component {
 
 
   render() {
-    if (this.props.currentUser) {
+
       return (
-        <div className="main-nav-links">
-        {this.props.currentUser.username} <button onClick={this.handleLogout}>Logout!</button>
-        </div>);
-    }
-    else {
-      return (
-        <div>
-          <p>Not logged</p>
+        <div className="search">
+          <input type="text" placeholder="Search" />
         </div>
       );
-    }
   }
 
 }
 
-export default withRouter(Greeting);
+export default withRouter(Search);
