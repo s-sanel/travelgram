@@ -99,8 +99,10 @@ class AuthForm extends React.Component {
                 <form className="login-box-form" onSubmit={this.handleSubmit}>
                   <h2>Sign up to see photos and videos from your friends.</h2> <br/>
                   <button type="submit" onClick={this.demoLogin} className="demo-login">Demo Login</button> <br/>
-                  <div className="center">
-                    - OR -
+                  <div className="or-separator">
+                    <div className="or-separator-line"></div>
+                    <div className="or-separator-text"> OR </div>
+                    <div className="or-separator-line"></div>
                   </div><br/>
                   <input type="text" onChange={this.update("email")} value={this.state.email} placeholder="Email" /><br/>
                   <input type="text" onChange={this.update("name")} value={this.state.name} placeholder="Full Name"/><br/>

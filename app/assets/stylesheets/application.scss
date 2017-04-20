@@ -118,6 +118,7 @@ h2 {
 
 .landing-page-intro{
   margin-top: 20px;
+  min-width: 300px;
   max-width: 350px;
   flex-grow: 1;
   justify-content: center;
@@ -184,8 +185,35 @@ h2 {
   color: red;
 }
 
-.center {
+.or-separator {
   text-align: center;
+  color: #999;
+  font-weight: 500;
+  display: flex;
+}
+
+.or-separator-line {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: #c7c7c7;
+  height: 1px;
+  position: relative;
+  top: .45em;
+}
+
+.or-separator-text {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+  margin: 0 18px;
 }
 
 @media only screen and (max-width : 768px) {
