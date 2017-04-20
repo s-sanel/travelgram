@@ -17,7 +17,8 @@
  @import "font-awesome/css/font-awesome.min.css";
  @font-face {
   font-family: 'Billabong';
-  src: url('custom-fonts/billabong.eot'), url('custom-fonts/billabong.ttf');
+  // src: url('custom-fonts/billabong.eot'), url('custom-fonts/billabong.ttf');
+  src: asset-url('custom-fonts/billabong.eot'), asset-url('custom-fonts/billabong.ttf');
 }
 
 body,button,input,textarea{
