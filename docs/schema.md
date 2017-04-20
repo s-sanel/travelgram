@@ -11,7 +11,7 @@ session_token   | string    | not null, indexed, unique
 name            | string    |
 profile_photo   | string    |
 
-## photos
+## posts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -25,14 +25,14 @@ column name | data type | details
 id          | integer   | not null, primary key
 body        | string    | not null
 user_id     | integer   | not null, foreign key (references users), indexed
-photo_id    | integer   | not null, foreign key (references photos), indexed
+post_id    | integer   | not null, foreign key (references photos), indexed
 
 ## likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed, unique[photo_id]
-photo_id    | integer   | not null, foreign key (references photos), indexed
+user_id     | integer   | not null, foreign key (references users), indexed, unique[post_id]
+post_id    | integer   | not null, foreign key (references photos), indexed
 
 ## follows
 column name | data type | details

@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import * as APIUtils from './util/session_api_util';
+import * as APIUtils from './util/posts_api_util';
 import { login, signup, logout } from './actions/session_actions';
+import { fetchPosts, fetchPost, createPost, updatePost, deletePost, receiveAllPosts } from './actions/posts_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -15,6 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.logout = logout;
   // window.store = configureStore();
   // let store = configureStore();
+  //
+  window.receiveAllPosts = receiveAllPosts;
+  window.fetchPosts = fetchPosts;
+  window.fetchPost = fetchPost;
+  window.createPost = createPost;
+  window.updatePost = updatePost;
+  window.deletePost = deletePost;
+
 //just for testing!
 
 
@@ -25,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+
+  window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

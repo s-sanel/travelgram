@@ -7,7 +7,7 @@ const Posts = ({ children }) => (
   <div className="data-root">
     <nav className="main-nav-bar">
       <div className="main-nav-logo">
-        <i className="fa fa-instagram" aria-hidden="true"></i> | Travelgram 
+        <i className="fa fa-instagram" aria-hidden="true"></i> | Travelgram
       </div>
       <SearchContainer />
       <GreetingContainer />

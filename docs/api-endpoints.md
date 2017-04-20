@@ -20,13 +20,13 @@
 - `POST /api/session`
 - `DELETE /api/session`
 
-### Photos
+### Posts
 
-- `GET /api/photos`
-- `POST /api/photos`
-- `GET /api/photos/:id`
-- `PATCH /api/photos/:id`
-- `DELETE /api/photos/:id`
+- `GET /api/posts`
+- `POST /api/posts`
+- `GET /api/posts/:id`
+- `PATCH /api/posts/:id`
+- `DELETE /api/posts/:id`
 
 ### Likes
 
