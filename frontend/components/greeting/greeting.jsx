@@ -10,8 +10,8 @@ class Greeting extends React.Component {
   }
 
   profilePage(){
-
-    this.props.router.push(`/${this.props.currentUser.id}`);
+    let id = Object.keys(this.props.currentUser)[0];
+    this.props.router.push(`/${id}`);
   }
 
   handleLogout(e) {

@@ -1,7 +1,11 @@
 import { values } from 'lodash';
 
 export const selectUserPosts = (state, userId) => {
-	const foundPosts = state.posts.find(post => post.user.id == userId);
+  let arrayPosts = Object.values(state.posts);
+
+  const foundPosts = arrayPosts.filter(post => {
+    return post.user.id == userId;
+  } );
 	return foundPosts || {};
 };
 

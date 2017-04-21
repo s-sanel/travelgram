@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 import { fetchPosts } from '../../actions/posts_actions';
 import UserProfile from './user_profile';
+import { selectUserPosts } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
-    posts: Object.keys(state.posts).map(id => state.posts[id])
+    posts: selectUserPosts(state, ownProps.params.user_id)
+    // posts: Object.keys(state.posts).map(id => state.posts[id])
   };
 };
 
