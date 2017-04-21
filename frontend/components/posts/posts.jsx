@@ -6,14 +6,20 @@ import PostsFeed from './posts_feed';
 
 const Posts = ({ children }) => (
   <div className="data-root">
-    <nav className="main-nav-bar">
-      <div className="main-nav-logo">
-        <i className="fa fa-instagram" aria-hidden="true"></i>
-        <div className="main-nav-logo-text">Travelgram</div>
+
+    <div className="nav-bar">
+      <div className="main-nav-bar-max-width">
+        <nav className="main-nav-bar">
+          <div className="main-nav-logo">
+            <i className="fa fa-instagram" aria-hidden="true"></i>
+            <div className="main-nav-logo-text">Travelgram</div>
+          </div>
+          <SearchContainer />
+          <GreetingContainer />
+        </nav>
       </div>
-      <SearchContainer />
-      <GreetingContainer />
-    </nav>
+
+  </div>
 
     <main className="main-content">
       <PostsFeedContainer />

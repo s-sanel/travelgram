@@ -21,6 +21,8 @@
   src: asset-url('custom-fonts/billabong.eot'), asset-url('custom-fonts/billabong.ttf');
 }
 
+@import "api/posts.scss";
+
 body,button,input,textarea{
   font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:14px;
@@ -224,12 +226,26 @@ h2 {
 .data-root {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  // flex: 1;
+  flex: 1 0 auto;
+}
+
+.nav-bar{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-nav-bar-max-width {
+    max-width: 1110px;
+    flex: 1;
 }
 
 .main-nav-bar{
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -283,6 +299,8 @@ h2 {
   // border: 1px solid red;
   background-color: #fafafa;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-nav-logo-text {
@@ -291,6 +309,10 @@ h2 {
   margin-left: 10px;
 }
 
+.max{
+  max-width: 1010px;
+  flex: 1;
+}
 
 // SEACH input
 form.seach-form input {

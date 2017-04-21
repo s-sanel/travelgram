@@ -14,7 +14,7 @@ class PostsFeed extends React.Component {
 
   render() {
     return (
-      <div>
+      <section className="posts-feed">
         <h1>Posts feed</h1>
         <ul>
           {
@@ -25,7 +25,7 @@ class PostsFeed extends React.Component {
             ))
           }
         </ul>
-      </div>
+      </section>
     );
   }
 }
