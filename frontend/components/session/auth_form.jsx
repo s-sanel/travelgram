@@ -10,6 +10,7 @@ class AuthForm extends React.Component {
       this.state = {username: "", password: "", email: "", name: ""};
       this.handleSubmit = this.handleSubmit.bind(this);
       this.demoLogin = this.demoLogin.bind(this);
+      this.resetState = this.resetState.bind(this);
     }
 
     componentDidMount(){
@@ -45,6 +46,10 @@ class AuthForm extends React.Component {
       }else{
         return "Have an account?";
       }
+    }
+
+    resetState(){
+      this.setState({username: "", password: "", email: "", name: ""});
     }
 
     navLink() {
