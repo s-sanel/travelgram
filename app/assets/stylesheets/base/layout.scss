@@ -1,0 +1,80 @@
+body, button, input, textarea {
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14px;
+}
+
+#root, html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+  background-color: $lightest-gray;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+#root section {
+  height: 100%;
+  flex: 1;
+}
+
+footer {
+  border: 1px solid $light-gray;
+  background-color: $white;
+  margin-top: 20px;
+  padding: 25px;
+}
+
+h1 {
+  font-family: 'Billabong';
+  font-size: 46px;
+  margin: 22px auto 14px;
+  text-align: center;
+  color: $darkest-gray;
+}
+
+h2 {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+  color: $dark-gray;
+  font-weight: 600;
+}
+
+a, button {
+  cursor: pointer;
+}
+button {
+  border: 2px solid $dark-gray;
+  border-radius: 5px;
+}
+
+button:focus {
+  outline:0px;
+}
+
+a {
+  color: $insta-blue;
+  text-decoration:none;
+}
+
+a:visited{
+  color: $insta-blue;
+  text-decoration:none
+}
+a:active {
+  opacity:.5
+}
+
+
+.border {
+  border: 1px solid red;
+}
+
+.dotted-border {
+  border: 1px dotted blue;
+}

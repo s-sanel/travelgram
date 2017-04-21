@@ -1,0 +1,119 @@
+.landing-page-main{
+  box-sizing: border-box;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  flex:1;
+}
+
+.landing-page-img {
+  align-self: center;
+  width: 454px;
+  height: 618px;
+  background-color: $lightest-gray;
+  background-image: image-url('homepage.png');
+  background-repeat: no-repeat;
+  margin: 0 10px;
+}
+
+.landing-page-intro{
+  margin-top: 20px;
+  min-width: 300px;
+  max-width: 350px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.landing-intro-nav{
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 1px;
+  color: $darkest-gray;
+  font-size: 14px;
+  margin: 10px 0 10px;
+  padding: 25px;
+  text-align: center;
+}
+
+ .login-box {
+   background-color: $white;
+   border: 1px solid $light-gray;
+   border-radius: 1px;
+   margin: 0 0 10px;
+   padding: 25px;
+   flex: 1;
+ }
+
+.login-box-logo {
+  border: 0px solid black;
+}
+
+ .login-box-form {
+  display: flex;
+  flex-direction: column;
+ /*justify-content: center;*/
+}
+
+ .login-box-form input{
+   background-color: white;
+   border: 1px solid $input-border;
+   border-radius: 3px;
+   box-sizing: border-box;
+   color: $darkest-gray;
+   font-size: 14px;
+   padding: 9px 8px 7px;
+   -webkit-appearance: none;
+   width: 100%;
+ }
+
+ li {
+   list-style: none;
+ }
+
+ .demo-login {
+  background: $insta-blue;
+  border-color: $insta-blue;
+  color: $white;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.errors{
+  padding: 0px;
+  margin-top: 20px;
+  color: $red;
+}
+
+.or-separator {
+  text-align: center;
+  color: $gray;
+  font-weight: 500;
+  display: flex;
+}
+
+.or-separator-line {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: $separator-gray;
+  height: 1px;
+  position: relative;
+  top: .45em;
+}
+
+.or-separator-text {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+  margin: 0 18px;
+}
