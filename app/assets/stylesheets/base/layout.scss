@@ -24,7 +24,7 @@ body, button, input, textarea {
 footer {
   border: 1px solid $light-gray;
   background-color: $white;
-  margin-top: 20px;
+  // margin-top: 20px;
   padding: 25px;
 }
 
@@ -70,6 +70,10 @@ a:active {
   opacity:.5
 }
 
+
+.img-circle {
+  border-radius: 50%;
+}
 
 .border {
   border: 1px solid red;

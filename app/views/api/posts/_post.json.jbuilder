@@ -1,14 +1,11 @@
-json.extract! post, :id, :url, :description
+json.extract! post, :id, :description
+json.url asset_path(post.url)
 json.user do
   json.extract! post.user, :id, :username
 end
 
-# json.extract! post do
-#   json.id post.id
-#   json.url url_for(post.url)
-#   json.description post.description
-#   json.post.user do
-#     json.extract! post.user, :id, :username
-#   end
-#
+
+# json.extract! post, :id, :url, :description
+# json.user do
+#   json.extract! post.user, :id, :username
 # end

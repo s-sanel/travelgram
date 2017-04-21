@@ -40,7 +40,8 @@
 | "/login" | "AuthFormContainer" |
 | "/signup" | "AuthFormContainer" |
 | "/posts"    | "PhotosIndexContainer" |
-| "/posts/:postId" | "PostShowContainer" |
-<!-- | "/users/:userId/photos/:photoId" | "PostShowContainer" | -->
+| "/:postId" | "PostShowContainer" |
+<!-- | "/posts/:postId" | "PostShowContainer" | -->
+<!-- | "/users/:userId" | "UserProfileContainer" | -->
 | "/users/:userId" | "UserProfileContainer" |
 | "/photo-form" | "PostPhotoContainer" |

@@ -14,7 +14,7 @@ class PostItem extends React.Component {
         <article className="post-box">
           <header className="post-header">
             <Link to="">
-              <img src="" alt="img" width="25px" height="25px" />
+              <img src="" alt="img" className="img-circle" width="30px" height="30px" />
             </Link> &nbsp;
             <Link to="">
               {this.props.post.user.username}
@@ -22,7 +22,7 @@ class PostItem extends React.Component {
           </header>
 
           <div className="post-image-holder">
-            <img src={this.props.post.url} alt={this.props.post.url} height="300px" width="100%"/>
+            <img className="responsive-image" src={this.props.post.url} alt={this.props.post.url} height="300px" width="100%"/>
           </div>
 
           <div>

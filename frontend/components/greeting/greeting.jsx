@@ -6,6 +6,12 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.profilePage = this.profilePage.bind(this);
+  }
+
+  profilePage(){
+
+    this.props.router.push(`/${this.props.currentUser.id}`);
   }
 
   handleLogout(e) {
@@ -15,7 +21,7 @@ class Greeting extends React.Component {
 
 
   render() {
-    if (this.props.currentUser) {
+
       return (
         <div className="main-nav-links">
           <div className="main-nav-explore">
@@ -29,23 +35,15 @@ class Greeting extends React.Component {
             </a>
           </div>
           <div className="main-nav-user">
-            <a href="#" title="Profile page">
+            <Link onClick={this.profilePage} title="Profile page">
               <i className="fa fa-user-o" aria-hidden="true"></i>
-            </a>
+            </Link>
           </div>
           <div className="main-nav-logout">
             <Link onClick={this.handleLogout} title="Logout"><i className="fa fa-sign-out" aria-hidden="true"></i></Link>
           </div>
         </div>);
     }
-    else {
-      return (
-        <div>
-          <p>Not logged</p>
-        </div>
-      );
-    }
-  }
 
 }
 // {this.props.currentUser.username}
