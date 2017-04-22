@@ -12,7 +12,7 @@ test_user2 = User.find_by_username("guest")
 test_user.destroy() if test_user
 test_user2.destroy() if test_user2
 
-test_user = User.new(username: "sanel", email: "sanel@gmail.com", password: "123456", url: "ghost.jpeg")
+test_user = User.new(username: "sanel", email: "sanel@gmail.com", password: "123456", profile_photo: "ghost.jpeg")
 test_user.save
 
 test_user2 = User.new(username: "guest", email: "guest@gmail.com", password: "123456")
