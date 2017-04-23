@@ -14,7 +14,6 @@
 
 .user-profile-logo {
   flex-grow: 1;
-  margin-right: 30px;
 }
 
 .user-profile-img {
@@ -34,6 +33,49 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.profile-name {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 200;
+}
+
+.profile-data-username {
+  margin-bottom: 10px;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-edit-btn {
+  color: #262626;
+  padding: 4px 24px;
+  margin-left: 20px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  background: 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.gear {
+  color: #262626;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.profile-data-stats {
+  margin-bottom: 20px;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-data-stats-data {
+  font-size: 16px;
+  margin-right: 40px;
+  line-height: 24px;
+}
+
 
 .user-profile-gallery {
   display: flex;

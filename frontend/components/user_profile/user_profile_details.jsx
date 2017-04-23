@@ -34,14 +34,34 @@ class UserProfileDetails extends React.Component {
           </div>
         </div>
         <div className="user-profile-data">
-          <div>
-          {username} | btn-following/follow/edit
+
+          <div className="profile-data-username">
+            <span className="profile-name">{username}</span>
+            <button className="profile-edit-btn">Edit Profile</button>
+            <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>
           </div>
-          <div>
-            no posts | no followers | no following
+
+
+          <div className="profile-data-stats">
+            <div className="profile-data-stats-data">
+              posts
+            </div>
+            <div className="profile-data-stats-data">
+              followers
+            </div>
+            <div className="profile-data-stats-data">
+              following
+            </div>
           </div>
-          <div>
-            {name} | bio
+
+          <div className="profile-data-stats">
+            <div className="profile-data-stats-data">
+              {name}
+            </div>
+            <div className="profile-data-stats-data">
+              Bio...
+            </div>
+
           </div>
         </div>
       </header>
