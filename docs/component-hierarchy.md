@@ -39,7 +39,7 @@
 | "/"    | "App" |
 | "/login" | "AuthFormContainer" |
 | "/signup" | "AuthFormContainer" |
-| "/posts"    | "PhotosIndexContainer" |
+| "/"    | "PhotosIndexContainer" |
 | "/posts/:postId" | "PostShowContainer" |
 | "/users/:userId" | "UserProfileContainer" |
-| "/photo-form" | "PostPhotoContainer" |
+| "/upload-photo" | "PostPhotoContainer" |

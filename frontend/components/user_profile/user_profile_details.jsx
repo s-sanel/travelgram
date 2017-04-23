@@ -30,12 +30,13 @@ class UserProfileDetails extends React.Component {
     let user = this.props.user;
     let username = this.props.user ? user.username : "";
     let name = this.props.user ? user.name : "";
+    let profile_photo = this.props.user ? user.profile_photo : "";
 
     return(
       <header className="user-profile-header">
         <div className="user-profile-logo">
           <div className="user-profile-img">
-            <img src="" width="150px" height="150px" title="profile img"/>
+            <img src={profile_photo} width="150px" height="150px" title="profile img"/>
           </div>
         </div>
         <div className="user-profile-data">
