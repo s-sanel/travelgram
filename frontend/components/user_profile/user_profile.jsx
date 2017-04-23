@@ -11,15 +11,20 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
+    // debugger
     this.props.fetchPosts();
-    this.props.fetchUser(this.props.params.user_id);
+    this.props.fetchUser(parseInt(this.props.params.user_id));
   }
 
   componentWillReceiveProps(newProps){
-    if(this.props.params.id != newProps.params.id){
-      this.props.fetchPosts();
-    }
+    // debugger
+    // if(this.props.params.id !== newProps.params.user_id){
+    //   this.props.fetchPosts();
+    //   this.props.fetchUser(parseInt(newProps.params.user_id));
+    // }
   }
+
+
 
   render() {
     // debugger
@@ -28,7 +33,7 @@ class UserProfile extends React.Component {
         <NavBar />
         <div className="user-profile-main">
           <article className="user-profile-article">
-            <UserProfileDetails user={this.props.user}/>
+            <UserProfileDetails user={this.props.user} currentUser={this.props.currentUser}/>
             <UserProfilePosts posts={this.props.posts}/>
           </article>
         </div>

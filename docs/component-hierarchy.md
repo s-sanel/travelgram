@@ -40,8 +40,6 @@
 | "/login" | "AuthFormContainer" |
 | "/signup" | "AuthFormContainer" |
 | "/posts"    | "PhotosIndexContainer" |
-| "/:postId" | "PostShowContainer" |
-<!-- | "/posts/:postId" | "PostShowContainer" | -->
-<!-- | "/users/:userId" | "UserProfileContainer" | -->
+| "/posts/:postId" | "PostShowContainer" |
 | "/users/:userId" | "UserProfileContainer" |
 | "/photo-form" | "PostPhotoContainer" |

@@ -1,19 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 class UserProfileDetails extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount(){
-    // debugger
-    // this.props.fetchPosts();
-    // this.props.fetchUser(this.props.params.user_id);
-  }
+  // componentDidMount(){
+  //   // debugger
+  //   this.props.fetchPosts();
+  //   this.props.fetchUser(this.props.params.user_id);
+  // }
+  //
+  // componentWillReceiveProps(newProps){
+  //   // debugger
+  //   if(this.props.params.user_id != newProps.params.user_id){
+  //     this.props.fetchPosts();
+  //     this.props.fetchUser(parseInt(this.props.params.user_id));
+  //   }
+  // }
 
   render(){
     // debugger
+    let user = this.props.user;
+    let username = this.props.user ? user.username : "";
+    let name = this.props.user ? user.name : "";
+
     return(
       <header className="user-profile-header">
         <div className="user-profile-logo">
@@ -23,13 +35,13 @@ class UserProfileDetails extends React.Component {
         </div>
         <div className="user-profile-data">
           <div>
-          uname| btn-following/follow/edit
+          {username} | btn-following/follow/edit
           </div>
           <div>
             no posts | no followers | no following
           </div>
           <div>
-            name | bio
+            {name} | bio
           </div>
         </div>
       </header>
@@ -37,4 +49,4 @@ class UserProfileDetails extends React.Component {
   }
 }
 
-export default UserProfileDetails;
+export default withRouter(UserProfileDetails);

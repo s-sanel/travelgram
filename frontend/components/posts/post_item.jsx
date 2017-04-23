@@ -10,7 +10,7 @@ class PostItem extends React.Component {
   profilePage(){
     // debugger
     let id = this.props.post.user.id;
-    this.props.router.push(`/${id}`);
+    this.props.router.push(`users/${id}`);
   }
 
   render(){

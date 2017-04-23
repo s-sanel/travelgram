@@ -15,7 +15,7 @@
     username: "travel-academy",
     name: "Travelgram Academy"
   },
-  photos: {
+  posts: {
     1: {
       description: "is useful to plan",
       url: "http//:www.url.com/image.jpg",

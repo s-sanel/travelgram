@@ -8,8 +8,10 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
     posts: selectUserPosts(state, ownProps.params.user_id),
+
     // posts: Object.keys(state.posts).map(id => state.posts[id])
-    user: Object.keys(state.users).map(id => state.users[id])[0],
+    // user: Object.keys(state.users).map(id => state.users[id])[0],
+    user: state.user,
     currentUser: state.session.currentUser
   };
 };
@@ -17,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchPosts: () => dispatch(fetchPosts()),
   fetchUser: (id) => dispatch(fetchUser(id))
+  // fetchUserPosts: (id) => dispatch(fetchUserPosts(id))
 });
 
 export default connect(
