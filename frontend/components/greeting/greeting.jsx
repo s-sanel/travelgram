@@ -11,12 +11,11 @@ class Greeting extends React.Component {
 
   profilePage(){
     // let id = Object.keys(this.props.currentUser)[0];
-    id = this.props.currentUser.id;
+    let id = this.props.currentUser.id;
     this.props.router.push(`/${id}`);
   }
 
   handleLogout(e) {
-    debugger
     e.preventDefault();
     this.props.logout().then(() => this.props.router.push('/signup'));
   }

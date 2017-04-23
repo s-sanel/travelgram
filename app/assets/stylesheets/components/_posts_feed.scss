@@ -25,7 +25,17 @@
 .post-header{
   border-bottom: 1px solid #efefef;
   padding: 15px;
+  display: flex;
+  align-items: center;
 }
+
+.post-header-data {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
 
 .post-image-holder {
   box-sizing: border-box;
@@ -33,13 +43,50 @@
   // display: flex;
 }
 
+.gray-link{
+  color: $gray-link;
+  font-weight: 600;
+}
+
 .responsive-image {
   width: 100%;
   height: auto;
 }
 
-
 .test-profile-page-images{
   width: 500px;
   margin: 0 auto;
+}
+
+.post-footer {
+  padding: 0 15px;
+}
+
+.post-footer-icons{
+  margin-top: 4px;
+  margin-left: -8px;
+  font-size: 24px;
+  display: flex;
+}
+
+.post-footer-icons a {
+  padding: 8px;
+  color: $gray-link;
+
+}
+
+.post-footer-icons a:hover {
+  color: $separator-gray;
+  -webkit-transition: color 1s ease-out;
+  -moz-transition: color 1s ease-out;
+  -o-transition: color 1s ease-out;
+  transition: color 1s ease-out;
+}
+
+.post-footer-likes {
+  margin-bottom: 8px;
+}
+
+.post-footer-items {
+  padding: 5px 0;
 }
