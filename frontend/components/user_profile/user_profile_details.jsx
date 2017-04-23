@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router';
 class UserProfileDetails extends React.Component {
   constructor(props) {
     super(props);
+    this.redirectToEdit = this.redirectToEdit.bind(this);
   }
 
   // componentDidMount(){
@@ -19,6 +20,10 @@ class UserProfileDetails extends React.Component {
   //     this.props.fetchUser(parseInt(this.props.params.user_id));
   //   }
   // }
+
+  redirectToEdit(){
+    this.props.router.push(`/users/${this.props.user.id}/edit`);
+  }
 
   render(){
     // debugger
@@ -37,7 +42,7 @@ class UserProfileDetails extends React.Component {
 
           <div className="profile-data-username">
             <span className="profile-name">{username}</span>
-            <button className="profile-edit-btn">Edit Profile</button>
+            <button onClick={this.redirectToEdit} className="profile-edit-btn">Edit Profile</button>
             <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>
           </div>
 

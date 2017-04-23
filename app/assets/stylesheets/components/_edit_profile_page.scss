@@ -1,0 +1,25 @@
+.edit-profile-main {
+  padding-top: 60px;
+}
+
+.edit-profile-article {
+  flex-grow: 1;
+  margin: 0 auto 30px;
+  max-width: 935px;
+  display: flex;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  min-height: 400px;
+}
+
+.edit-profile-navigation {
+  flex-grow: 1;
+  border-right: 1px solid #dbdbdb;
+  padding: 10px;
+}
+
+.edit-profile-form {
+  flex-grow: 3;
+  padding: 10px;
+}
