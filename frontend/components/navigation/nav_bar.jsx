@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import GreetingContainer from '../greeting/greeting_container';
+import NavLinksContainer from './nav_links_container';
 import SearchContainer from '../search/search_container';
 
 class NavBar extends React.Component {
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
             </Link>
               </div>
               <SearchContainer />
-              <GreetingContainer />
+              <NavLinksContainer />
             </nav>
           </div>
         </div>

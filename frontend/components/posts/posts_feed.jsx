@@ -21,7 +21,11 @@ class PostsFeed extends React.Component {
             this.props.posts.reverse().map(post => (
               <PostItem
                 key={post.id}
-                post={post} />
+                post={post}
+    
+                createLike={this.props.createLike}
+                deleteLike={this.props.deleteLike}
+              />
             ))
           }
         </ul>
@@ -30,7 +34,4 @@ class PostsFeed extends React.Component {
   }
 }
 
-
 export default PostsFeed;
-
-// export default withRouter(PostsFeed);

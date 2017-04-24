@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import Spinner from '../shared/spinner';
 
 class UserProfileDetails extends React.Component {
   constructor(props) {
@@ -26,11 +27,10 @@ class UserProfileDetails extends React.Component {
   }
 
   render(){
-    // debugger
+    
     let user = this.props.user;
 
-    if (!user.name) return <header className="user-profile-header">Loading User...</header>
-
+    if (!user.name) return <header className="user-profile-header">Loading User... <Spinner /></header>;
     let username = this.props.user ? user.username : "";
     let name = this.props.user ? user.name : "";
     let profile_photo = this.props.user ? user.profile_photo : "";

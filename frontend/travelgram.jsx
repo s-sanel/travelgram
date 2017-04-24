@@ -4,24 +4,26 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import * as APIUtils from './util/users_api_util';
-// import { login, signup, logout } from './actions/session_actions';
+import { login, signup, logout } from './actions/session_actions';
 import { fetchUsers, fetchUser } from './actions/users_actions';
+import { createLike, deleteLike } from './actions/likes_actions';
+import {fetchPost, fetchPosts} from './actions/posts_actions';
 import {selectAllUsers, selectUserPosts} from './reducers/selectors';
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
 //just for testing!
-  // window.testUser = { user: { username: "test", email: "test@gmail.com", password: "123456" } };
-  // window.login = login;
+  window.testUser = { user: { username: "test", email: "test@gmail.com", password: "123456" } };
+  window.login = login;
   // window.signup = signup;
   // window.logout = logout;
   // window.store = configureStore();
   // let store = configureStore();
   //
-  // window.receiveAllPosts = receiveAllPosts;
-  // window.fetchPosts = fetchPosts;
-  // window.fetchPost = fetchPost;
+
+  window.fetchPosts = fetchPosts;
+  window.fetchPost = fetchPost;
   // window.createPost = createPost;
   // window.updatePost = updatePost;
   // window.deletePost = deletePost;
@@ -29,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchUser = fetchUser;
   // window.selectAllUsers = selectAllUsers;
   // window.selectUserPosts = selectUserPosts;
+
+  window.createLike = createLike;
+  window.deleteLike = deleteLike;
+
 //just for testing!
 
 
@@ -40,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // window.store = store;
+  window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-class Greeting extends React.Component {
+class NavLinks extends React.Component {
 
   constructor(props) {
     super(props);
@@ -50,4 +50,4 @@ class Greeting extends React.Component {
     }
 
 }
-export default withRouter(Greeting);
+export default withRouter(NavLinks);

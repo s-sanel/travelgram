@@ -4,16 +4,54 @@ import {Link, withRouter} from 'react-router';
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { liked: false };
     this.profilePage = this.profilePage.bind(this);
+    this.likeAction = this.likeAction.bind(this);
+  }
+
+  componentDidMount(){
+    if(this.isLikedByUser()){
+      this.setState({liked: true});
+    }else {
+      this.setState({liked: false});
+    }
   }
 
   profilePage(){
-    // debugger
     let id = this.props.post.user.id;
     this.props.router.push(`users/${id}`);
   }
 
+  isLikedByUser(){
+// debugger
+    let res = this.props.post.likes.find( like => {
+      return like.user_id == currentUser.id;
+    });
+    let val = (res) ? true : false;
+    return val;
+  }
+
+  likeAction(){
+    debugger
+    if(this.isLikedByUser()){
+      this.props.deleteLike(this.props.post.id);
+      this.setState({liked: false});
+    } else {
+      this.props.createLike(this.props.post.id);
+      this.setState({liked: true});
+    }
+  }
+
+  heartClass() {
+    if (this.isLikedByUser()){
+      return "fa fa-heart";
+    } else {
+      return "fa fa-heart-o";
+    }
+  }
+
   render(){
+
     return(
       <article className="post-box">
         <header className="post-header">
@@ -33,16 +71,16 @@ class PostItem extends React.Component {
 
         <div className="post-footer">
           <section className="post-footer-icons">
-            <a href="">
-              <i className="fa fa-heart-o" aria-hidden="true"></i>
-            </a>
+            <Link onClick={this.likeAction}>
+              <i className={this.heartClass()} aria-hidden="true"></i>
+            </Link>
             <a href="">
               <i className="fa fa-comment-o" aria-hidden="true"></i>
             </a>
           </section>
 
           <section className="post-footer-likes">
-            num likes
+            {this.props.post.likes.length} likes
           </section>
 
           <div>
@@ -55,8 +93,8 @@ class PostItem extends React.Component {
             </ul>
           </section>
 
-          <section className="post-footer-items">
-            time ago...
+          <section className="post-footer-time-ago">
+            {this.props.post.created_ago} ago
           </section>
 
           <section className="post-footer-items">

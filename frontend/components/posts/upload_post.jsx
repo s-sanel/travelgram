@@ -39,19 +39,21 @@ class UploadPost extends React.Component {
     formData.append("post[description]", this.state.description);
     formData.append("post[image]", this.state.imageFile);
     formData.append("post[url]", "test");
-    // debugger
     let id = this.props.currentUser.id;
     this.props.createPost(formData).then(() => this.props.router.push(`users/${id}`));
   }
 
   render() {
     // debugger
+    // if(this.props.currentUser.username) {
+    //   return <h1>loadin....</h1>;
+    // }
     return (
       <div className="data-root">
         <NavBar />
         <div className="upload-post-main">
           <div className="">
-            User: {this.props.currentUser.username}
+
           </div>
 
           <form className="upload-post-article">
