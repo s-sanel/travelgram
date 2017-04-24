@@ -1,0 +1,43 @@
+.upload-post-main {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.upload-post-article {
+  flex-grow: 1;
+  margin: 20px auto 30px;
+  max-width: 535px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  min-height: 400px;
+}
+
+.upload-post-preview {
+  flex: 1;
+  padding: 10px;
+}
+
+.upload-post-caption {
+  overflow: hidden;
+  padding: 10px;
+  border-top: 1px solid $input-border;
+}
+
+.description-textarea {
+  width: 100%;
+  max-width: 500px;
+  max-height: 100px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+border: 1px solid $input-border;
+color: $gray-link;
+font-size: 14px;
+// overflow:scroll;
+// overflow-y:scroll;
+// overflow-x:hidden;
+}

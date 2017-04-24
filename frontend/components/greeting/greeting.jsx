@@ -7,6 +7,7 @@ class Greeting extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.profilePage = this.profilePage.bind(this);
+    this.uploadPost = this.uploadPost.bind(this);
   }
 
   profilePage(){
@@ -14,6 +15,11 @@ class Greeting extends React.Component {
     // let id = Object.keys(this.props.currentUser)[0];
     let id = this.props.currentUser.id;
     this.props.router.push(`users/${id}`);
+  }
+
+  uploadPost(){
+    // debugger
+    this.props.router.push("/upload-post");
   }
 
   handleLogout(e) {
@@ -32,9 +38,9 @@ class Greeting extends React.Component {
             </a>
           </div>
           <div className="upload-photo">
-            <a href="#" title="Upload photo">
+            <Link onClick={this.uploadPost} title="Upload photo">
               <i className="fa fa-upload" aria-hidden="true"></i>
-            </a>
+            </Link>
           </div>
           <div className="main-nav-user">
             <Link onClick={this.profilePage} title="Profile page">

@@ -13,7 +13,7 @@ class UserProfilePosts extends React.Component {
     return(
       <div className="user-profile-gallery">
         {
-          this.props.posts.map(post => (
+          this.props.posts.reverse().map(post => (
             <UserProfilePostItem
               key={post.id}
               post={post} />

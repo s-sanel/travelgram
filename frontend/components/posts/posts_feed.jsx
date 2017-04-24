@@ -18,7 +18,7 @@ class PostsFeed extends React.Component {
         <h1>Posts feed</h1>
         <ul>
           {
-            this.props.posts.map(post => (
+            this.props.posts.reverse().map(post => (
               <PostItem
                 key={post.id}
                 post={post} />
