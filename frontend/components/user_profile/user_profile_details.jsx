@@ -7,19 +7,19 @@ class UserProfileDetails extends React.Component {
     this.redirectToEdit = this.redirectToEdit.bind(this);
   }
 
-  // componentDidMount(){
-  //   // debugger
-  //   this.props.fetchPosts();
-  //   this.props.fetchUser(this.props.params.user_id);
-  // }
+  componentDidMount(){
+    // debugger
+    // this.props.fetchPosts();
+    // this.props.fetchUser(this.props.params.user_id);
+  }
   //
-  // componentWillReceiveProps(newProps){
-  //   // debugger
-  //   if(this.props.params.user_id != newProps.params.user_id){
-  //     this.props.fetchPosts();
-  //     this.props.fetchUser(parseInt(this.props.params.user_id));
-  //   }
-  // }
+  componentWillReceiveProps(newProps){
+    // debugger
+    // if(this.props.user.id != newProps.params.user_id){
+    //   this.props.fetchPosts();
+    //   this.props.fetchUser(parseInt(this.props.params.user_id));
+    // }
+  }
 
   redirectToEdit(){
     this.props.router.push(`/users/${this.props.user.id}/edit`);
@@ -28,6 +28,9 @@ class UserProfileDetails extends React.Component {
   render(){
     // debugger
     let user = this.props.user;
+
+    if (!user.name) return <header className="user-profile-header">Loading User...</header>
+
     let username = this.props.user ? user.username : "";
     let name = this.props.user ? user.name : "";
     let profile_photo = this.props.user ? user.profile_photo : "";

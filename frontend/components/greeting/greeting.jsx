@@ -11,8 +11,6 @@ class Greeting extends React.Component {
   }
 
   profilePage(){
-    // debugger
-    // let id = Object.keys(this.props.currentUser)[0];
     let id = this.props.currentUser.id;
     this.props.router.push(`users/${id}`);
   }
@@ -29,7 +27,6 @@ class Greeting extends React.Component {
 
 
   render() {
-
       return (
         <div className="main-nav-links">
           <div className="main-nav-explore">
@@ -54,5 +51,4 @@ class Greeting extends React.Component {
     }
 
 }
-// {this.props.currentUser.username}
 export default withRouter(Greeting);

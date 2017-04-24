@@ -14,17 +14,13 @@ class UserProfilePostItem extends React.Component {
   }
 
   render(){
-
     return(
       <div className="user-profile-image-holder">
         <a>
           <img className="" src={this.props.post.url} alt={this.props.post.url} height="100%" width="100%"/>
         </a>
       </div>
-
-
     );
-
   }
 }
 

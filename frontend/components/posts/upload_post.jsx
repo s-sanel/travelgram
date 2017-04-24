@@ -51,7 +51,7 @@ class UploadPost extends React.Component {
         <NavBar />
         <div className="upload-post-main">
           <div className="">
-            User: {currentUser.username}
+            User: {this.props.currentUser.username}
           </div>
 
           <form className="upload-post-article">

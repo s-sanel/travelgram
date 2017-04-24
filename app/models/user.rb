@@ -2,15 +2,19 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  name            :string
-#  profile_photo   :string
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  name               :string
+#  profile_photo      :string
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -24,6 +28,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :posts, dependent: :destroy
+  has_many :likes
 
 	after_initialize :ensure_session_token
 

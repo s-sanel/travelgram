@@ -8,9 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
     posts: selectUserPosts(state, ownProps.params.user_id),
-
     // posts: Object.keys(state.posts).map(id => state.posts[id])
-    // user: Object.keys(state.users).map(id => state.users[id])[0],
     user: state.user,
     currentUser: state.session.currentUser
   };

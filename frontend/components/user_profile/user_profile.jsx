@@ -12,16 +12,18 @@ class UserProfile extends React.Component {
 
   componentDidMount(){
     // debugger
+    console.log("profile mounted");
     this.props.fetchPosts();
     this.props.fetchUser(parseInt(this.props.params.user_id));
   }
 
   componentWillReceiveProps(newProps){
+    console.log("profile receive props");
     // debugger
-    // if(this.props.params.id !== newProps.params.user_id){
-    //   this.props.fetchPosts();
-    //   this.props.fetchUser(parseInt(newProps.params.user_id));
-    // }
+    if(this.props.params.user_id !== newProps.params.user_id){
+      this.props.fetchPosts();
+      this.props.fetchUser(parseInt(newProps.params.user_id));
+    }
   }
 
 
