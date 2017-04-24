@@ -28,7 +28,7 @@
     + CommentForm
 
 **PostPhotoContainer**
- + NewPhoto
+ + NewPost
 
 
 
@@ -37,9 +37,9 @@
 |Path   | Component   |
 |-------|-------------|
 | "/"    | "App" |
+| "/"    | "PhotosIndexContainer" |
 | "/login" | "AuthFormContainer" |
 | "/signup" | "AuthFormContainer" |
-| "/"    | "PhotosIndexContainer" |
 | "/posts/:postId" | "PostShowContainer" |
 | "/users/:userId" | "UserProfileContainer" |
-| "/upload-photo" | "PostPhotoContainer" |
+| "/create-post" | "PostPhotoContainer" |

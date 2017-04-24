@@ -40,7 +40,6 @@ class UploadPost extends React.Component {
     formData.append("post[image]", this.state.imageFile);
     formData.append("post[url]", "test");
     // debugger
-    // this.props.createPost(formData).then(() => window.location.reload());
     let id = this.props.currentUser.id;
     this.props.createPost(formData).then(() => this.props.router.push(`users/${id}`));
   }
@@ -58,7 +57,7 @@ class UploadPost extends React.Component {
           <form className="upload-post-article">
             <div className="upload-post-preview">
 
-              <input type="file" onChange={this.updateFile}/> <br />
+              <input type="file" onChange={this.updateFile}/> <br /> <br />
               <img src={this.state.imageUrl} className="" width="100%" height="auto"/>
             </div>
             <div className="upload-post-caption">
