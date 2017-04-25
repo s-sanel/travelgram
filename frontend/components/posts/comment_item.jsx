@@ -21,7 +21,9 @@ class CommentItem extends React.Component {
   render(){
     return(
       <li className="comment-item">
-        <span className="bold">{this.props.comment.username}</span> {this.props.comment.body}
+        <div className="comment-item-data">
+          <span className="bold">{this.props.comment.username}</span> {this.props.comment.body}
+        </div>
         {this.renderDeleteButton()}
       </li>
     );

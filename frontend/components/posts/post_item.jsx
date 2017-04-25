@@ -60,8 +60,6 @@ class PostItem extends React.Component {
   }
 
   render(){
-    // debugger
-
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
 

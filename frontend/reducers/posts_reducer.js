@@ -27,19 +27,15 @@ const PostsReducer = (oldState = {}, action) => {
       let likeIndex = getIndex(nextState[action.like.post_id].likes, action.like);
       nextState[action.like.post_id].likes.splice(likeIndex, 1);
       return nextState;
-
-//comments
-      case RECEIVE_COMMENT:
-        let copyAddComState = Object.assign({}, oldState);
-        copyAddComState[action.comment.post_id].comments.push(action.comment);
-        return copyAddComState;
-      case REMOVE_COMMENT:
-        let copyRemComState = Object.assign({}, oldState)
-        let commentIndex = getIndex(copyRemComState[action.comment.post_id].comments, action.comment)
-
-        copyRemComState[action.comment.post_id].comments.splice(commentIndex, 1);
-        return copyRemComState;
-//comments
+    case RECEIVE_COMMENT:
+      let copyAddComState = Object.assign({}, oldState);
+      copyAddComState[action.comment.post_id].comments.push(action.comment);
+      return copyAddComState;
+    case REMOVE_COMMENT:
+      let copyRemComState = Object.assign({}, oldState)
+      let commentIndex = getIndex(copyRemComState[action.comment.post_id].comments, action.comment)
+      copyRemComState[action.comment.post_id].comments.splice(commentIndex, 1);
+      return copyRemComState;
     default:
       return oldState;
   }
