@@ -6,10 +6,10 @@ export const createComment = (post_id, body) => {
   });
 };
 
-export const deleteComment = (post_id) => {
+export const deleteComment = (id) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/likes/${post_id}`,
-    data: {like: {post_id}}
+    url: `/api/comments/${id}`
+    // data: {like: {post_id}}
   });
 };

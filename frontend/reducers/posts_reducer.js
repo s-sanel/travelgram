@@ -30,12 +30,15 @@ const PostsReducer = (oldState = {}, action) => {
 
 //comments
       case RECEIVE_COMMENT:
-        let copyCommState = Object.assign({}, oldState);
-        copyCommState[action.comment.post_id].comments.push(action.comment);
-        return copyCommState;
-
+        let copyAddComState = Object.assign({}, oldState);
+        copyAddComState[action.comment.post_id].comments.push(action.comment);
+        return copyAddComState;
       case REMOVE_COMMENT:
-        return oldState
+        let copyRemComState = Object.assign({}, oldState)
+        let commentIndex = getIndex(copyRemComState[action.comment.post_id].comments, action.comment)
+
+        copyRemComState[action.comment.post_id].comments.splice(commentIndex, 1);
+        return copyRemComState;
 //comments
     default:
       return oldState;

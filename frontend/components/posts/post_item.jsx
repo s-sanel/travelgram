@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
-import CommentItem from './comment_item'
+import CommentItem from './comment_item';
+import AddCommentForm from './add_comment_form';
 
 class PostItem extends React.Component {
   constructor(props) {
@@ -101,11 +102,9 @@ class PostItem extends React.Component {
 
           <section className="post-footer-items">
             <ul>
-
-            <li className="post-footer-time-ago">
-              load more comments if {this.props.post.comments.length} > 5
-            </li>
-
+              <li className="post-footer-time-ago">
+                load more comments if {this.props.post.comments.length} > 5
+              </li>
               {
                 this.props.post.comments.map( comment => (
                   <CommentItem
@@ -116,7 +115,6 @@ class PostItem extends React.Component {
                   />
                 ))
               }
-
             </ul>
           </section>
 
@@ -124,12 +122,12 @@ class PostItem extends React.Component {
             {this.props.post.created_ago} ago
           </section>
 
-          <section className="post-footer-items add-comment">
-            <form className="add-comment-form">
-              <input type="text" className="input-comment" id={comm} placeholder="Add a comment..."/>
-              <input type="submit" value="POST" className="add-comment-submit"/>
-            </form>
-          </section>
+          <AddCommentForm
+            post={this.props.post}
+            createComment={this.props.createComment}
+          />
+
+
         </div>
       </article>
     );

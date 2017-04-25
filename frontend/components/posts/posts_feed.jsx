@@ -31,6 +31,7 @@ class PostsFeed extends React.Component {
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
+                createComment={this.props.createComment}
                 deleteComment={this.props.deleteComment}
               />
             ))

@@ -105,7 +105,7 @@
 }
 
 .comment-item {
-  margin: 5px 0;
+  margin: 8px 0;
   position: relative;
 }
 
@@ -129,7 +129,13 @@
 
 .delete-comment {
   position: absolute;
-  right: 0
+  right: 0;
+  color: $gray;
+  padding: 0 3px;
+}
+
+.delete-comment:hover {
+  color: $gray-link;
 }
 
 
