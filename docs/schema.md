@@ -32,7 +32,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed, unique[post_id]
-post_id    | integer   | not null, foreign key (references photos), indexed
+post_id     | integer   | not null, foreign key (references photos), indexed
 
 ## follows
 column name | data type | details

@@ -24,7 +24,6 @@ class PostItem extends React.Component {
 
   isLikedByUser(){
     let res = this.props.post.likes.find( like => {
-      // return like.user_id == currentUser.id;
       return like.user_id == this.props.currentUser.id;
     });
     let val = (res) ? true : false;
@@ -50,7 +49,18 @@ class PostItem extends React.Component {
     }
   }
 
+  focusToAddComment(e){
+    let id = e.currentTarget.id;
+    let el = document.getElementById("input-comment-"+id);
+    if(el){
+      el.focus();
+    }
+  }
+
   render(){
+    let post_id = this.props.post.id;
+    let comm = "input-comment-" + post_id;
+
     return(
       <article className="post-box">
         <header className="post-header">
@@ -73,17 +83,17 @@ class PostItem extends React.Component {
             <Link onClick={this.likeAction}>
               <i className={this.heartClass()} aria-hidden="true"></i>
             </Link>
-            <a href="">
+            <Link onClick={this.focusToAddComment} id={post_id}>
               <i className="fa fa-comment-o" aria-hidden="true"></i>
-            </a>
+            </Link>
           </section>
 
-          <section className="post-footer-likes">
+          <section className="post-footer-likes bold">
             {this.props.post.likes.length} likes
           </section>
 
           <div>
-            {this.props.post.user.username} - {this.props.post.description}
+            <span className="bold">{this.props.post.user.username}</span>  {this.props.post.description}
           </div>
 
           <section className="post-footer-items">
@@ -96,8 +106,11 @@ class PostItem extends React.Component {
             {this.props.post.created_ago} ago
           </section>
 
-          <section className="post-footer-items">
-            <input type="text" placeholder="Add a comment..."/>
+          <section className="post-footer-items add-comment">
+            <form className="add-comment-form">
+              <input type="text" className="input-comment" id={comm} placeholder="Add a comment..."/>
+              <input type="submit" value="POST" className="add-comment-submit"/>
+            </form>
           </section>
         </div>
       </article>

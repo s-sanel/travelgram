@@ -63,7 +63,7 @@
 }
 
 .post-footer-icons{
-  margin-top: 4px;
+  margin-top: 0px;
   margin-left: -8px;
   font-size: 24px;
   display: flex;
@@ -76,19 +76,20 @@
 }
 
 .post-footer-icons a:hover {
-  color: $separator-gray;
-  -webkit-transition: color 1s ease-out;
-  -moz-transition: color 1s ease-out;
-  -o-transition: color 1s ease-out;
-  transition: color 1s ease-out;
+  color:$dark-gray;
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 
 .post-footer-likes {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .post-footer-items {
-  padding: 5px 0;
+  padding: 8px 0;
+  // margin: 5px 0;
 }
 
 .post-footer-time-ago {
@@ -96,4 +97,32 @@
   color: $gray;
   text-transform: uppercase;
   font-size: 10px;
+}
+
+.add-comment{
+  border-top: 1px solid $light-gray;
+  color: $light-gray;
+  margin-top: 5px;
+}
+
+.add-comment-form {
+  display: flex;
+}
+
+.input-comment {
+  border: none;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.input-comment:focus {
+  outline: 0;
+}
+
+.add-comment-submit {
+  background-color: $white;
+  border: 1px solid $lightest-gray;
+  color: $insta-blue;
+  cursor: pointer;
 }
