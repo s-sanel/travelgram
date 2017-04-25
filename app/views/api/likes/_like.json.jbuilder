@@ -1,3 +1,3 @@
 json.extract! like, :id
-json.userId like.user.id
-json.postId like.post.id
+json.user_id like.user.id
+json.post_id like.post.id

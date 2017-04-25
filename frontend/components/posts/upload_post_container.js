@@ -3,7 +3,6 @@ import { fetchPosts, createPost } from '../../actions/posts_actions';
 import UploadPost from './upload_post';
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     currentUser: state.session.currentUser
   };

@@ -18,19 +18,13 @@ const PostsReducer = (oldState = {}, action) => {
       delete newState[action.post.id];
       return newState;
     case RECEIVE_LIKE:
-
       let copyState = Object.assign({}, oldState);
-      copyState[action.like.postId].likes.push(action.like);
-      // debugger
+      copyState[action.like.post_id].likes.push(action.like);
       return copyState;
-
-    //  newState[action.like.photo.id].likes.push(newLike);
-
     case REMOVE_LIKE:
       let nextState = Object.assign({}, oldState);
       let likeIndex = getIndex(nextState[action.like.post_id].likes, action.like);
       nextState[action.like.post_id].likes.splice(likeIndex, 1);
-      // debugger
       return nextState;
     default:
       return oldState;

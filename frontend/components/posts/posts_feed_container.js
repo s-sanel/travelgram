@@ -4,7 +4,6 @@ import { createLike, deleteLike } from '../../actions/likes_actions';
 import PostsFeed from './posts_feed';
 
 const mapStateToProps = (state) => {
-// debugger
   return {
     currentUser: state.session.currentUser,
     posts: Object.keys(state.posts).map(id => state.posts[id])
@@ -12,7 +11,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // debugger
   return ({
     fetchPosts: () => dispatch(fetchPosts()),
     createLike: (postId) => dispatch(createLike(postId)),

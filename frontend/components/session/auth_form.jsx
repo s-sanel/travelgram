@@ -72,9 +72,6 @@ class AuthForm extends React.Component {
     renderErrors() {
       if (this.props.errors){
         let keys = Object.keys(this.props.errors);
-// erros are passed as an array now - changed controller/api from @user.errors to @user.errors.full_messages
-// now errors are passed as an array, before it was an object!!
-//change this
         return(
           <div className="errors">
             <ul>

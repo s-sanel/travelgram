@@ -14,26 +14,21 @@ import {selectAllUsers, selectUserPosts} from './reducers/selectors';
 document.addEventListener('DOMContentLoaded', () => {
 
 //just for testing!
-  window.testUser = { user: { username: "test", email: "test@gmail.com", password: "123456" } };
-  window.login = login;
+  // window.testUser = { user: { username: "test", email: "test@gmail.com", password: "123456" } };
+  // window.login = login;
   // window.signup = signup;
   // window.logout = logout;
   // window.store = configureStore();
-  // let store = configureStore();
-  //
 
-  window.fetchPosts = fetchPosts;
-  window.fetchPost = fetchPost;
+  // window.fetchPosts = fetchPosts;
+  // window.fetchPost = fetchPost;
   // window.createPost = createPost;
   // window.updatePost = updatePost;
-  // window.deletePost = deletePost;
-  // window.fetchUsers = fetchUsers;
   // window.fetchUser = fetchUser;
   // window.selectAllUsers = selectAllUsers;
   // window.selectUserPosts = selectUserPosts;
-
-  window.createLike = createLike;
-  window.deleteLike = deleteLike;
+  // window.createLike = createLike;
+  // window.deleteLike = deleteLike;
 
 //just for testing!
 
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
+  // window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

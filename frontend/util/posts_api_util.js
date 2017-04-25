@@ -13,7 +13,6 @@ export const fetchPost = (id) => {
 };
 
 export const createPost = (post) => {
-  // debugger
   return $.ajax({
     method: "POST",
     url: "/api/posts",
@@ -33,7 +32,6 @@ export const updatePost = (post) => {
 };
 
 export const deletePost = (id) => {
-  // debugger
   return $.ajax({
     method: "DELETE",
     url: `/api/posts/${id}`

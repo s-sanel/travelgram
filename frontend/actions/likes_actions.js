@@ -14,7 +14,6 @@ export const removeLike = like => ({
 });
 
 export const createLike = postId => dispatch => {
-  // debugger
   return (
     LikeApiUtil.createLike(postId)
     .then( like => dispatch(receiveLike(like)))
@@ -22,7 +21,6 @@ export const createLike = postId => dispatch => {
 };
 
 export const deleteLike = postId => dispatch => {
-// debugger
   return (
     LikeApiUtil.deleteLike(postId)
     .then( like => dispatch(removeLike(like)))

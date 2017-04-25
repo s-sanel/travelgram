@@ -23,9 +23,9 @@ class PostItem extends React.Component {
   }
 
   isLikedByUser(){
-debugger
     let res = this.props.post.likes.find( like => {
-      return like.userId == currentUser.id;
+      // return like.user_id == currentUser.id;
+      return like.user_id == this.props.currentUser.id;
     });
     let val = (res) ? true : false;
     return val;
@@ -35,7 +35,6 @@ debugger
     if(this.isLikedByUser()){
       this.props.deleteLike(this.props.post.id);
       this.setState({liked: false});
-
     } else {
       this.props.createLike(this.props.post.id);
       this.setState({liked: true});
@@ -52,8 +51,6 @@ debugger
   }
 
   render(){
-    // debugger
-
     return(
       <article className="post-box">
         <header className="post-header">

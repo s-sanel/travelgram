@@ -9,7 +9,6 @@ class UserProfilePosts extends React.Component {
 
 
   render(){
-// debugger
     return(
       <div className="user-profile-gallery">
         {

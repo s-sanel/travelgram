@@ -5,7 +5,6 @@ import UserProfile from './user_profile';
 import { selectUserPosts } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     posts: selectUserPosts(state, ownProps.params.user_id),
     // posts: Object.keys(state.posts).map(id => state.posts[id])

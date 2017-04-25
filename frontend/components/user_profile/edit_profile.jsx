@@ -21,7 +21,6 @@ class EditProfile extends React.Component {
 
 
   render() {
-    // debugger
     return (
       <div className="data-root">
         <NavBar />

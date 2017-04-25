@@ -1,4 +1,4 @@
-// import {  withRouter } from 'react-router';
+import {  withRouter } from 'react-router';
 import React from 'react';
 import PostItem from './post_item';
 
@@ -12,8 +12,13 @@ class PostsFeed extends React.Component {
     this.props.fetchPosts();
   }
 
+  componentWillReceiveProps(newProps){
+    if(!newProps.currentUser){
+      this.props.router.push("/signup");
+    }
+  }
+
   render() {
-    // debugger
     return (
       <section className="posts-feed">
         <h1>Posts feed</h1>
@@ -23,7 +28,7 @@ class PostsFeed extends React.Component {
               <PostItem
                 key={post.id}
                 post={post}
-
+                currentUser={this.props.currentUser}
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
               />
@@ -35,4 +40,4 @@ class PostsFeed extends React.Component {
   }
 }
 
-export default PostsFeed;
+export default withRouter(PostsFeed);

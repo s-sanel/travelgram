@@ -24,7 +24,6 @@ class NavLinks extends React.Component {
     this.props.logout().then(() => this.props.router.push('/signup'));
   }
 
-
   render() {
       return (
         <div className="main-nav-links">

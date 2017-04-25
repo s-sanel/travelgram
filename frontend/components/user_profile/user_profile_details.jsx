@@ -9,13 +9,11 @@ class UserProfileDetails extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
     // this.props.fetchPosts();
     // this.props.fetchUser(this.props.params.user_id);
   }
   //
   componentWillReceiveProps(newProps){
-    // debugger
     // if(this.props.user.id != newProps.params.user_id){
     //   this.props.fetchPosts();
     //   this.props.fetchUser(parseInt(this.props.params.user_id));
@@ -27,7 +25,7 @@ class UserProfileDetails extends React.Component {
   }
 
   render(){
-    
+
     let user = this.props.user;
 
     if (!user.name) return <header className="user-profile-header">Loading User... <Spinner /></header>;

@@ -33,7 +33,6 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    # debugger
     @post = current_user.posts.find(params[:id])
     @post.destroy
     render json: @post

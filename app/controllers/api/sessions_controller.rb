@@ -17,7 +17,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    # debugger
     @user = current_user
     if @user
       logout!

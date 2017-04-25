@@ -20,7 +20,6 @@ class UploadPost extends React.Component {
     let fileReader = new FileReader();
     fileReader.onloadend = () => this.setState({ imageFile: file, imageUrl: fileReader.result });
 
-
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -44,7 +43,7 @@ class UploadPost extends React.Component {
   }
 
   render() {
-    // debugger
+    // 
     // if(this.props.currentUser.username) {
     //   return <h1>loadin....</h1>;
     // }
