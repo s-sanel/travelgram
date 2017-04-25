@@ -13,12 +13,18 @@ export const removeLike = like => ({
   like
 });
 
-export const createLike = postId => dispatch => (
-  LikeApiUtil.createLike(postId)
+export const createLike = postId => dispatch => {
+  // debugger
+  return (
+    LikeApiUtil.createLike(postId)
     .then( like => dispatch(receiveLike(like)))
-);
+  );
+};
 
-export const deleteLike = postId => dispatch => (
-  LikeApiUtil.deleteLike(postId)
+export const deleteLike = postId => dispatch => {
+// debugger
+  return (
+    LikeApiUtil.deleteLike(postId)
     .then( like => dispatch(removeLike(like)))
-);
+  );
+};

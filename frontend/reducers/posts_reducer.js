@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/posts_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/likes_actions';
 import { merge } from 'lodash/merge';
+import { getIndex } from '../util/util';
 
 
 const PostsReducer = (oldState = {}, action) => {
@@ -17,17 +18,20 @@ const PostsReducer = (oldState = {}, action) => {
       delete newState[action.post.id];
       return newState;
     case RECEIVE_LIKE:
-// debugger
+
       let copyState = Object.assign({}, oldState);
       copyState[action.like.postId].likes.push(action.like);
-      // update likes array for liked post
-      // action.like = {
-        //   id: 5,
-        //   userId: 39,
-        //   postId: 673764
-        //
-        // oldState.posts[action.like.postId].likes.push(action.like)
-        return copyState;
+      // debugger
+      return copyState;
+
+    //  newState[action.like.photo.id].likes.push(newLike);
+
+    case REMOVE_LIKE:
+      let nextState = Object.assign({}, oldState);
+      let likeIndex = getIndex(nextState[action.like.post_id].likes, action.like);
+      nextState[action.like.post_id].likes.splice(likeIndex, 1);
+      // debugger
+      return nextState;
     default:
       return oldState;
   }

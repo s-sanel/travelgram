@@ -13,6 +13,7 @@ class PostsFeed extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <section className="posts-feed">
         <h1>Posts feed</h1>
@@ -22,7 +23,7 @@ class PostsFeed extends React.Component {
               <PostItem
                 key={post.id}
                 post={post}
-    
+
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
               />

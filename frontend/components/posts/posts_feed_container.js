@@ -11,11 +11,15 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchPosts: () => dispatch(fetchPosts()),
-  createLike: (postId) => dispatch(createLike(postId)),
-  deleteLike: (postId) => dispatch(deleteLike(postId))
-});
+const mapDispatchToProps = (dispatch) => {
+  // debugger
+  return ({
+    fetchPosts: () => dispatch(fetchPosts()),
+    createLike: (postId) => dispatch(createLike(postId)),
+    deleteLike: (postId) => dispatch(deleteLike(postId))
+  });
+
+};
 
 export default connect(
   mapStateToProps,

@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router';
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = {liked: false};
     this.profilePage = this.profilePage.bind(this);
     this.likeAction = this.likeAction.bind(this);
   }
@@ -23,22 +23,23 @@ class PostItem extends React.Component {
   }
 
   isLikedByUser(){
-// debugger
+debugger
     let res = this.props.post.likes.find( like => {
-      return like.user_id == currentUser.id;
+      return like.userId == currentUser.id;
     });
     let val = (res) ? true : false;
     return val;
   }
 
   likeAction(){
-    debugger
     if(this.isLikedByUser()){
       this.props.deleteLike(this.props.post.id);
       this.setState({liked: false});
+
     } else {
       this.props.createLike(this.props.post.id);
       this.setState({liked: true});
+
     }
   }
 
@@ -51,6 +52,7 @@ class PostItem extends React.Component {
   }
 
   render(){
+    // debugger
 
     return(
       <article className="post-box">
