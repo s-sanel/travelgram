@@ -6,7 +6,7 @@ import PostsFeed from './posts_feed';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
-    posts: Object.keys(state.posts).map(id => state.posts[id])
+    posts: Object.keys(state.posts).map(id => state.posts[id]).reverse()
   };
 };
 

@@ -30,7 +30,7 @@ class UserProfile extends React.Component {
         <NavBar />
         <div className="user-profile-main">
           <article className="user-profile-article">
-            <UserProfileDetails user={this.props.user} currentUser={this.props.currentUser}/>
+            <UserProfileDetails posts={this.props.posts} user={this.props.user} currentUser={this.props.currentUser}/>
             <UserProfilePosts posts={this.props.posts}/>
           </article>
         </div>

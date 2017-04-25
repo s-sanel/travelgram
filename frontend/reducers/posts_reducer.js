@@ -8,10 +8,14 @@ const PostsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ALL_POSTS:
-      return action.posts;
-      // let posts = action.posts;
-      // return Object.assign({}, oldState, {posts});
+    // debugger
+
+      // return action.posts;
+
+      let posts = action.posts;
+      return Object.assign({}, oldState, posts);
     case RECEIVE_POST:
+    debugger
       return Object.assign({}, oldState, { [action.post.id]: action.post });
     case REMOVE_POST:
       let newState = Object.assign({}, oldState);

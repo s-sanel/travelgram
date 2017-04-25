@@ -32,6 +32,7 @@ class UserProfileDetails extends React.Component {
     let username = this.props.user ? user.username : "";
     let name = this.props.user ? user.name : "";
     let profile_photo = this.props.user ? user.profile_photo : "";
+    // let no_posts = this.props.posts ? this.props.posts.length : "No";
 
     return(
       <header className="user-profile-header">
@@ -51,7 +52,7 @@ class UserProfileDetails extends React.Component {
 
           <div className="profile-data-stats">
             <div className="profile-data-stats-data">
-              posts
+              {this.props.posts.length} posts
             </div>
             <div className="profile-data-stats-data">
               followers

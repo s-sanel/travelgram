@@ -13,6 +13,7 @@ class PostsFeed extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
+    // debugger
     if(!newProps.currentUser){
       this.props.router.push("/signup");
     }
@@ -24,7 +25,7 @@ class PostsFeed extends React.Component {
         <h1>Posts feed</h1>
         <ul>
           {
-            this.props.posts.reverse().map(post => (
+            this.props.posts.map(post => (
               <PostItem
                 key={post.id}
                 post={post}
