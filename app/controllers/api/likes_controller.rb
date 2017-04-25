@@ -5,7 +5,7 @@ class Api::LikesController < ApplicationController
     if @like.save
       render "api/likes/show"
     else
-      ender json: @like.errors, status: 422
+      render json: @like.errors, status: 422
     end
   end
 

@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :likes
+  has_many :comments
 
 	after_initialize :ensure_session_token
 

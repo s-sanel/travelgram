@@ -41,6 +41,11 @@
   box-sizing: border-box;
   padding: 0px;
   // display: flex;
+  cursor: pointer;
+}
+
+.post-image-holder:hover {
+  opacity: 0.9;
 }
 
 .gray-link{

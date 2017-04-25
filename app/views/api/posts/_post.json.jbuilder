@@ -6,3 +6,6 @@ json.user do
 end
 
 json.likes post.likes
+
+# comments
+json.comments post.comments

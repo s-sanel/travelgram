@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :edit, :show, :update, :destroy]
     resource :session, only: [:create, :destroy, :show]
 
-    resources :posts 
+    resources :posts
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
+    # comments nested under posts?
   end
 end

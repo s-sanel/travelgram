@@ -23,6 +23,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :likes
+  has_many :comments
 
   def created_ago
     diff_in_secs =(Time.now - self.created_at).round

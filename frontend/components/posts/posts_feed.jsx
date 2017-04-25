@@ -13,7 +13,6 @@ class PostsFeed extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    // debugger
     if(!newProps.currentUser){
       this.props.router.push("/signup");
     }
