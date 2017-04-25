@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/posts_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/likes_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
 import { merge } from 'lodash/merge';
 import { getIndex } from '../util/util';
 
@@ -26,6 +27,16 @@ const PostsReducer = (oldState = {}, action) => {
       let likeIndex = getIndex(nextState[action.like.post_id].likes, action.like);
       nextState[action.like.post_id].likes.splice(likeIndex, 1);
       return nextState;
+
+//comments
+      case RECEIVE_COMMENT:
+        let copyCommState = Object.assign({}, oldState);
+        copyCommState[action.comment.post_id].comments.push(action.comment);
+        return copyCommState;
+
+      case REMOVE_COMMENT:
+        return oldState
+//comments
     default:
       return oldState;
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import CommentItem from './comment_item'
 
 class PostItem extends React.Component {
   constructor(props) {
@@ -58,6 +59,8 @@ class PostItem extends React.Component {
   }
 
   render(){
+    // debugger
+
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
 
@@ -98,7 +101,22 @@ class PostItem extends React.Component {
 
           <section className="post-footer-items">
             <ul>
-              comments...
+
+            <li className="post-footer-time-ago">
+              load more comments if {this.props.post.comments.length} > 5
+            </li>
+
+              {
+                this.props.post.comments.map( comment => (
+                  <CommentItem
+                    key={comment.id}
+                    comment={comment}
+                    currentUser={this.props.currentUser}
+                    deleteComment={this.props.deleteComment}
+                  />
+                ))
+              }
+
             </ul>
           </section>
 

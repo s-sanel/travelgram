@@ -104,6 +104,11 @@
   font-size: 10px;
 }
 
+.comment-item {
+  margin: 5px 0;
+  position: relative;
+}
+
 .add-comment{
   border-top: 1px solid $light-gray;
   color: $light-gray;
@@ -120,6 +125,11 @@
   width: 100%;
   height: 20px;
   overflow: hidden;
+}
+
+.delete-comment {
+  position: absolute;
+  right: 0
 }
 
 
