@@ -14,11 +14,9 @@ class UserProfileDetails extends React.Component {
   }
   //
   componentWillReceiveProps(newProps){
-    // debugger
-    // if(this.props.user.id != newProps.params.user_id){
-    //   this.props.fetchPosts();
-    //   this.props.fetchUser(parseInt(this.props.params.user_id));
-    // }
+    if(!newProps.currentUser){
+      this.props.router.push("/signup");
+    }
   }
 
   redirectToEdit(){

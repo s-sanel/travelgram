@@ -7,7 +7,6 @@ export const createFollow = (follower_id, following_id) => {
 };
 
 export const deleteFollow = (follower_id, following_id) => {
-// debugger
   return $.ajax({
     method: "GET",
     url: "/api/follows/delete",

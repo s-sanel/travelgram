@@ -6,11 +6,21 @@ class Follow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {followed: false};
     this.unfollow = this.unfollow.bind(this);
     this.follow = this.follow.bind(this);
   }
 
+  componentDidMount(){
+    if(this.isUserFollowedByCurrentUser()){
+      this.setState({followed: true});
+    }else {
+      this.setState({followed: false});
+    }
+  }
+
   componentWillReceiveProps(newProps){
+    // debugger
     console.log("follow wil receive propsssss");
     console.log(newProps.params);
   }
@@ -22,8 +32,8 @@ class Follow extends React.Component {
   }
 
   isUserFollowedByCurrentUser(){
-    let currentId = this.props.user.id;
-    let res = this.props.currentUser.followees.find( followee => {
+    let currentId = this.props.currentUser.id;
+    let res = this.props.user.followers.find( followee => {
       return followee.id == currentId;
     });
     let val = (res) ? true : false;
@@ -31,17 +41,17 @@ class Follow extends React.Component {
   }
 
   unfollow(){
-    // debugger
     let follower_id = this.props.currentUser.id;
     let following_id = this.props.user.id;
     this.props.deleteFollow(follower_id, following_id);
-    // this.props.deleteFollow();
+    this.setState({followed: false});
   }
 
   follow(){
     let follower_id = this.props.currentUser.id;
     let following_id = this.props.user.id;
     this.props.createFollow(follower_id, following_id);
+    this.setState({followed: true});
   }
 
   renderButton(){
