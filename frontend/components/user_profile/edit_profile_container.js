@@ -3,7 +3,6 @@ import { fetchUser, updateUser } from '../../actions/users_actions';
 import EditProfile from './edit_profile';
 
 const mapStateToProps = (state, ownProps) => {
-// debugger
   return {
     user: state.user,
     currentUser: state.session.currentUser
@@ -12,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
-  updateUser: (user) => dispatch(updateUser(id))
+  updateUser: (user) => dispatch(updateUser(user))
 });
 
 export default connect(

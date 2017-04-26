@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../navigation/nav_bar';
 import UserProfileDetails from './user_profile_details';
 import UserProfilePosts from './user_profile_posts';
+import { Link, withRouter } from 'react-router';
 
 
 class EditProfile extends React.Component {
@@ -9,6 +10,7 @@ class EditProfile extends React.Component {
     super(props);
     // this.state = {name: "", username: "", website: "", bio: "test bio"};
     this.state = this.props.currentUser;
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -17,6 +19,13 @@ class EditProfile extends React.Component {
 
   componentWillReceiveProps(newProps){
 
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    const user = this.state;
+    this.props.updateUser(user).then(() => this.props.router.push('/'));
+    // change route to user pr
   }
 
   update(field) {
@@ -52,7 +61,7 @@ class EditProfile extends React.Component {
 
               </div>
 
-              <form className="edit-profile-form">
+              <form className="edit-profile-form" onSubmit={this.handleSubmit}>
 
                 <div className="edit-profile-data-row">
                   <aside className="edit-profile-field-title">Name</aside>
