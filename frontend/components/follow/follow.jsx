@@ -19,11 +19,7 @@ class Follow extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps){
-    // debugger
-    console.log("follow wil receive propsssss");
-    console.log(newProps.params);
-  }
+  componentWillReceiveProps(newProps){}
 
 
   handleLogout(e) {

@@ -21,7 +21,6 @@ export const createFollow = (follower_id, following_id) => dispatch => {
 };
 
 export const deleteFollow = (follower_id, following_id) => dispatch => {
-// debugger
   return (
     FollowApiUtil.deleteFollow(follower_id, following_id)
     .then( follow => dispatch(removeFollow(follow)))

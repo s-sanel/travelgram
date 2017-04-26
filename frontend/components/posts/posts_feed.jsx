@@ -20,7 +20,6 @@ class PostsFeed extends React.Component {
   }
 
   render() {
-    // debugger
     if (this.props.fetching) return  <Spinner />;
     return (
       <section className="posts-feed">

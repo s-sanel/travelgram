@@ -3,7 +3,6 @@ import { createFollow, deleteFollow } from "../../actions/follows_actions";
 import Follow from './follow';
 
 const mapStateToProps = (state, ownProps) => {
-// debugger
   return {
     currentUser: state.session.currentUser,
     user: state.user
