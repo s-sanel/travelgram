@@ -16,10 +16,97 @@
 .edit-profile-navigation {
   flex-grow: 1;
   border-right: 1px solid #dbdbdb;
+
+}
+
+.edit-profile-navigation-item{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px 10px;
+  border-left: 3px solid $darkest-gray;
+}
+
+.edit-profile-form-header {
+  margin: 32px 0 16px 0;
+  display: flex;
+  align-items: center;
+}
+
+.edit-profile-header-img {
+  flex: 1;
+  text-align: right;
+}
+
+.edit-profile-header-img img {
+  border-radius: 50%;
+}
+
+.edit-profile-header-name {
+  flex: 3;
+  text-align: left;
+  margin-left: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.edit-profile-data {
+  flex-grow: 3;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .edit-profile-form {
-  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  margin: 32px 0 16px 0;
+}
+
+.edit-profile-data-row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+}
+
+.edit-profile-field-title {
+  flex: 1;
+  text-align: right;
+  margin-right: 30px;
+  min-width: 100px;
+}
+
+.edit-profile-field-input-holder {
+  flex: 3;
+}
+
+.edit-profile-field-input-holder > * {
+  width: 70%;
+  min-width: 150px;
+  font-size: 18px;
+  font-weight: 500;
+  color: $gray-link;
+  border-radius: 2px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffffff;
   padding: 10px;
+}
+
+.edit-bio-textarea {
+  max-width: 500px;
+  border: 1px solid $input-border;
+}
+
+.edit-user-submit {
+  background: $insta-blue;
+  border-color: $insta-blue;
+  color: $white;
+  font-size: 16px;
+  padding: 8px;
+  width: 30%;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
