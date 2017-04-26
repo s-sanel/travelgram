@@ -110,3 +110,14 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+.profile-user-follow-btn {
+  background: $insta-blue;
+  color: $white;
+  padding: 4px 24px;
+  margin-left: 20px;
+  border-radius: 3px;
+  border: 1px solid $insta-blue;
+  font-size: 14px;
+  font-weight: 600;
+}

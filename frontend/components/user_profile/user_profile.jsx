@@ -33,6 +33,7 @@ class UserProfile extends React.Component {
         </div>
       </div>
     );
+
     return (
       <div className="data-root">
         <NavBar />

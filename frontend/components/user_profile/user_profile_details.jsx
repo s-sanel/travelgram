@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import Spinner from '../shared/spinner';
+import FollowContainer from '../follow/follow_container';
 
 class UserProfileDetails extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class UserProfileDetails extends React.Component {
       );
     }else {
       return(
-        <button className="profile-edit-btn">Follow/Unfollow</button>
+        <FollowContainer />
       );
     }
   }
@@ -65,10 +66,10 @@ class UserProfileDetails extends React.Component {
               {this.props.posts.length} posts
             </div>
             <div className="profile-data-stats-data">
-              followers
+              {this.props.user.followers.length} followers
             </div>
             <div className="profile-data-stats-data">
-              following
+              {this.props.user.followees.length} following
             </div>
           </div>
 
