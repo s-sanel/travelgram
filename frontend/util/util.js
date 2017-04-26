@@ -7,3 +7,14 @@ export const getIndex = (arr, obj) => {
   });
   return ind;
 };
+
+
+export const getIndexById = (arr, id) => {
+  let ind;
+  arr.forEach((el, index) => {
+    if (el.id === id) {
+      ind = index;
+    }
+  });
+  return ind;
+};

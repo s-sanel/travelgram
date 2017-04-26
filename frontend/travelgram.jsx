@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchUser = fetchUser;
   // window.selectAllUsers = selectAllUsers;
   // window.selectUserPosts = selectUserPosts;
-  window.createFollow = createFollow;
-  window.deleteFollow = deleteFollow;
+  // window.createFollow = createFollow;
+  // window.deleteFollow = deleteFollow;
 
 //just for testing!
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store;
+  // window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

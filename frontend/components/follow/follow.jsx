@@ -6,8 +6,13 @@ class Follow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleLogout = this.handleLogout.bind(this);
+    this.unfollow = this.unfollow.bind(this);
+    this.follow = this.follow.bind(this);
+  }
 
+  componentWillReceiveProps(newProps){
+    console.log("follow wil receive propsssss");
+    console.log(newProps.params);
   }
 
 
@@ -25,11 +30,25 @@ class Follow extends React.Component {
     return val;
   }
 
+  unfollow(){
+    // debugger
+    let follower_id = this.props.currentUser.id;
+    let following_id = this.props.user.id;
+    this.props.deleteFollow(follower_id, following_id);
+    // this.props.deleteFollow();
+  }
+
+  follow(){
+    let follower_id = this.props.currentUser.id;
+    let following_id = this.props.user.id;
+    this.props.createFollow(follower_id, following_id);
+  }
+
   renderButton(){
     if (this.isUserFollowedByCurrentUser()){
-      return <Link className="profile-edit-btn">Following</Link>;
+      return <Link onClick={this.unfollow} className="profile-edit-btn">Following</Link>;
     }else {
-      return <Link className="profile-user-follow-btn">Follow</Link>;
+      return <Link onClick={this.follow} className="profile-user-follow-btn">Follow</Link>;
     }
   }
 

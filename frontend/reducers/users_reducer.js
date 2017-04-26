@@ -1,5 +1,6 @@
 import { RECEIVE_USERS, RECEIVE_USER } from '../actions/users_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follows_actions';
+import { getIndexById } from '../util/util';
 
 const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -12,9 +13,14 @@ const UsersReducer = (oldState = {}, action) => {
       return action.user;
 
     case RECEIVE_FOLLOW:
-      return oldState;
+      let copyAddFollow = Object.assign({}, oldState);
+      copyAddFollow.followers.push(action.follow.follower);
+      return copyAddFollow;
     case REMOVE_FOLLOW:
-      return oldState;
+      let copyRemFollow = Object.assign({}, oldState);
+      let followeeIndex = getIndexById(copyRemFollow.followers, action.follow.follower_id);
+      copyRemFollow.followers.splice(followeeIndex, 1);
+      return copyRemFollow;
     default:
       return oldState;
   }

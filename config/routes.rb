@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     # comments nested under posts?
     resources :follows, only: [:create, :destroy]
+    get "follows/delete", to: "follows#delete"
   end
 end
