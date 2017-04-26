@@ -89,6 +89,7 @@
   padding: 0px;
   margin-left: 0px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .user-profile-image-holder:hover {
@@ -100,4 +101,12 @@
 }
 .user-profile-image-holder:nth-of-type(3n) {
 	margin-right: 0;
+}
+
+.user-profile-image-holder-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -10px;
 }

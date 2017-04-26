@@ -14,7 +14,7 @@ class CommentItem extends React.Component {
 
   renderDeleteButton(){
     if(this.props.comment.user_id == this.props.currentUser.id){
-      return <Link className="delete-comment" title="Delete comment" onClick={this.deleteComment}> X </Link>;
+      return <Link className="delete-comment" title="Delete comment" onClick={this.deleteComment}> <i className="fa fa-times" aria-hidden="true"></i> </Link>;
     }
   }
 

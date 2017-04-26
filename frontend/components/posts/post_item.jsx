@@ -6,17 +6,17 @@ import AddCommentForm from './add_comment_form';
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {liked: false};
+    // this.state = {liked: false};
     this.profilePage = this.profilePage.bind(this);
     this.likeAction = this.likeAction.bind(this);
   }
 
   componentDidMount(){
-    if(this.isLikedByUser()){
-      this.setState({liked: true});
-    }else {
-      this.setState({liked: false});
-    }
+    // if(this.isLikedByUser()){
+    //   this.setState({liked: true});
+    // }else {
+    //   this.setState({liked: false});
+    // }
   }
 
   profilePage(){
@@ -25,20 +25,22 @@ class PostItem extends React.Component {
   }
 
   isLikedByUser(){
-    let res = this.props.post.likes.find( like => {
-      return like.user_id == this.props.currentUser.id;
-    });
-    let val = (res) ? true : false;
-    return val;
+    if(this.props.currentUser) {
+      let res = this.props.post.likes.find( like => {
+        return like.user_id == this.props.currentUser.id;
+      });
+      let val = (res) ? true : false;
+      return val;
+    }
   }
 
   likeAction(){
     if(this.isLikedByUser()){
       this.props.deleteLike(this.props.post.id);
-      this.setState({liked: false});
+      // this.setState({liked: false});
     } else {
       this.props.createLike(this.props.post.id);
-      this.setState({liked: true});
+      // this.setState({liked: true});
 
     }
   }

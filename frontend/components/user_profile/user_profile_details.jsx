@@ -9,34 +9,24 @@ class UserProfileDetails extends React.Component {
     this.redirectToEdit = this.redirectToEdit.bind(this);
   }
 
-  componentDidMount(){
-
-  }
-  //
-  componentWillReceiveProps(newProps){
-    if(!newProps.currentUser){
-      this.props.router.push("/signup");
-    }
-  }
+  componentDidMount(){}
+  componentWillReceiveProps(newProps){}
 
   redirectToEdit(){
     this.props.router.push(`/users/${this.props.user.id}/edit`);
   }
 
   followingOrEditButton(){
-    if(this.props.user.id == this.props.currentUser.id){
-      return(
-        <button onClick={this.redirectToEdit} className="profile-edit-btn">Edit Profile</button>
-      );
-    }else {
-      return(
-        <FollowContainer />
-      );
+    if(this.props.currentUser){
+      if(this.props.user.id == this.props.currentUser.id){
+        return(<button onClick={this.redirectToEdit} className="profile-edit-btn">Edit Profile</button>);
+      }else {
+        return(<FollowContainer />);
+      }
     }
   }
 
   render(){
-// debugger
     let user = this.props.user;
     if (!user.name) return <Spinner />;
 
@@ -57,7 +47,6 @@ class UserProfileDetails extends React.Component {
             {this.followingOrEditButton()}
             <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>
           </div>
-
 
           <div className="profile-data-stats">
             <div className="profile-data-stats-data">
