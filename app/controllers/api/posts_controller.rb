@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
+    # sleep 1
     @posts = Post.all
     render :index
   end

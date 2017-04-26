@@ -1,9 +1,10 @@
 import React from 'react';
 
 export default function Spinner() {
+  // debugger
   return (
-    <div>
-      <i className="loader"/>
+    <div className="spinner-pos">
+      <div className="loader"></div>
     </div>
   );
 

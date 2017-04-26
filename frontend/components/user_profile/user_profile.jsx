@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../navigation/nav_bar';
 import UserProfileDetails from './user_profile_details';
 import UserProfilePosts from './user_profile_posts';
-
+import Spinner from '../shared/spinner';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -25,12 +25,20 @@ class UserProfile extends React.Component {
 
 
   render() {
+    if (!this.props.user.name) return (
+      <div className="data-root">
+        <NavBar />
+        <div className="user-profile-main">
+          <Spinner />;
+        </div>
+      </div>
+    );
     return (
       <div className="data-root">
         <NavBar />
         <div className="user-profile-main">
           <article className="user-profile-article">
-            <UserProfileDetails posts={this.props.posts} user={this.props.user} currentUser={this.props.currentUser}/>
+            <UserProfileDetails posts={this.props.posts} user={this.props.user} currentUser={this.props.currentUser} fetchUser={this.props.fetchUser}/>
             <UserProfilePosts posts={this.props.posts}/>
           </article>
         </div>

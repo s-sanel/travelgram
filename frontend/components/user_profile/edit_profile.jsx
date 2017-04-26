@@ -9,22 +9,20 @@ class EditProfile extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {name: "", username: "", website: "", bio: "test bio"};
-    this.state = this.props.currentUser;
+    this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
-
   }
 
   componentWillReceiveProps(newProps){
-
   }
 
   handleSubmit(e){
     e.preventDefault();
     const user = this.state;
-    this.props.updateUser(user).then(() => this.props.router.push('/'));
+    this.props.updateUser(user).then(() => this.props.router.push(`/users/${this.props.user.id}`));
     // change route to user pr
   }
 
@@ -35,8 +33,7 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    // debugger
-    let profile_photo = this.props.currentUser ? currentUser.profile_photo : "";
+    let profile_photo = this.props.currentUser ? this.props.currentUser.profile_photo : "";
 
     return (
       <div className="data-root">

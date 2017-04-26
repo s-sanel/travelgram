@@ -9,11 +9,11 @@ class UserProfileDetails extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.fetchPosts();
-    // this.props.fetchUser(this.props.params.user_id);
+
   }
   //
   componentWillReceiveProps(newProps){
+    // debugger
     // if(this.props.user.id != newProps.params.user_id){
     //   this.props.fetchPosts();
     //   this.props.fetchUser(parseInt(this.props.params.user_id));
@@ -24,15 +24,25 @@ class UserProfileDetails extends React.Component {
     this.props.router.push(`/users/${this.props.user.id}/edit`);
   }
 
+  followingOrEditButton(){
+    if(this.props.user.id == this.props.currentUser.id){
+      return(
+        <button onClick={this.redirectToEdit} className="profile-edit-btn">Edit Profile</button>
+      );
+    }else {
+      return(
+        <button className="profile-edit-btn">Follow/Unfollow</button>
+      );
+    }
+  }
+
   render(){
-
+// debugger
     let user = this.props.user;
+    if (!user.name) return <Spinner />;
 
-    if (!user.name) return <header className="user-profile-header">Loading User... <Spinner /></header>;
-    let username = this.props.user ? user.username : "";
     let name = this.props.user ? user.name : "";
     let profile_photo = this.props.user ? user.profile_photo : "";
-    // let no_posts = this.props.posts ? this.props.posts.length : "No";
 
     return(
       <header className="user-profile-header">
@@ -44,8 +54,8 @@ class UserProfileDetails extends React.Component {
         <div className="user-profile-data">
 
           <div className="profile-data-username">
-            <span className="profile-name">{username}</span>
-            <button onClick={this.redirectToEdit} className="profile-edit-btn">Edit Profile</button>
+            <span className="profile-name">{this.props.user.username}</span>
+            {this.followingOrEditButton()}
             <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>
           </div>
 

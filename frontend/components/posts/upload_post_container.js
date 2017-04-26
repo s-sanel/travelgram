@@ -4,7 +4,8 @@ import UploadPost from './upload_post';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    user: state.user
   };
 };
 

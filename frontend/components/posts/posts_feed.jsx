@@ -1,6 +1,7 @@
 import {  withRouter } from 'react-router';
 import React from 'react';
 import PostItem from './post_item';
+import Spinner from '../shared/spinner';
 
 
 class PostsFeed extends React.Component {
@@ -19,6 +20,8 @@ class PostsFeed extends React.Component {
   }
 
   render() {
+    // debugger
+    if (this.props.fetching) return  <Spinner />;
     return (
       <section className="posts-feed">
         <h1>Posts feed</h1>
@@ -29,6 +32,7 @@ class PostsFeed extends React.Component {
                 key={post.id}
                 post={post}
                 currentUser={this.props.currentUser}
+                user={this.props.user}
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
                 createComment={this.props.createComment}

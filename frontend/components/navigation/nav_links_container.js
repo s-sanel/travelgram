@@ -4,7 +4,8 @@ import NavLinks from './nav_links';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    user: state.user
   };
 };
 
