@@ -10,7 +10,7 @@ import { createLike, deleteLike } from './actions/likes_actions';
 import {fetchPost, fetchPosts} from './actions/posts_actions';
 import {selectAllUsers, selectUserPosts} from './reducers/selectors';
 
-import {createComment, deleteComment} from './actions/comments_actions';
+import {createFollow, deleteFollow} from './actions/follows_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchUser = fetchUser;
   // window.selectAllUsers = selectAllUsers;
   // window.selectUserPosts = selectUserPosts;
-  // window.createComment = createComment;
-  // window.deleteComment = deleteComment;
+  window.createFollow = createFollow;
+  window.deleteFollow = deleteFollow;
 
 //just for testing!
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // window.store = store;
+  window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

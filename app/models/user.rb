@@ -31,6 +31,25 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
 
+  has_many :follows_as_followee,
+    class_name: :Follow,
+    primary_key: :id,
+    foreign_key: :following_id
+
+
+  has_many :follows_as_follower,
+    class_name: :Follow,
+    primary_key: :id,
+    foreign_key: :follower_id
+
+  has_many :followers,
+    through: :follows_as_followee,
+    source: :follower
+
+  has_many :followees,
+    through: :follows_as_follower,
+    source: :followee
+
 	after_initialize :ensure_session_token
 
   attr_reader :password

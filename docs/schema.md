@@ -39,4 +39,4 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references users), indexed, unique[following_id]
-following_id| integer   | not null, foreign key (references photos), indexed
+following_id| integer   | not null, foreign key (references users), indexed
