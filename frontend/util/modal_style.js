@@ -29,7 +29,7 @@ module.exports = {
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '2px',
     outline                    : 'none',
-    padding                    : '20px',
+    padding                    : '1px',
     opacity                    : '0',
     transition                 : 'opacity 1s',
     zIndex                     : 11

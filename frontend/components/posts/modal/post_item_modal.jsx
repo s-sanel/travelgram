@@ -30,6 +30,13 @@ class PostItemModal extends React.Component {
     ModalStyle.content.opacity = 100;
   }
 
+  componentDidMount(){
+    // debugger
+  }
+  componentWillReceiveProps(){
+    // debugger
+  }
+
 
   render(){
     return(
@@ -49,7 +56,6 @@ class PostItemModal extends React.Component {
           onAfterOpen={this.onModalOpen}
           contentLabel="Modal"
           >
-          <button onClick={this.closeModal}>close</button>
 
           <PostItemModalData
             key={this.props.post.id}

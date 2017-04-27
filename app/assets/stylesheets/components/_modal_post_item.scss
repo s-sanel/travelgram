@@ -1,3 +1,13 @@
 .modal-post-holder{
   display: flex;
 }
+
+.modal-post-image {
+  flex-grow: 3;
+  width: 65%
+}
+
+.modal-post-data {
+  flex-grow: 1;
+  width: 35%;
+}

@@ -6,22 +6,20 @@ import AddCommentForm from '../add_comment_form';
 class PostItemModalData extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {liked: false};
-    this.profilePage = this.profilePage.bind(this);
+    this.state = {liked: false};
     this.likeAction = this.likeAction.bind(this);
   }
 
   componentDidMount(){
-    // if(this.isLikedByUser()){
-    //   this.setState({liked: true});
-    // }else {
-    //   this.setState({liked: false});
-    // }
+    if(this.isLikedByUser()){
+      this.setState({liked: true});
+    }else {
+      this.setState({liked: false});
+    }
   }
 
-  profilePage(){
-    let id = this.props.post.user.id;
-    this.props.router.push(`users/${id}`);
+  componentWillReceiveProps(newProps) {
+    // debugger
   }
 
   isLikedByUser(){
@@ -37,10 +35,10 @@ class PostItemModalData extends React.Component {
   likeAction(){
     if(this.isLikedByUser()){
       this.props.deleteLike(this.props.post.id);
-      // this.setState({liked: false});
+      this.setState({liked: false});
     } else {
       this.props.createLike(this.props.post.id);
-      // this.setState({liked: true});
+      this.setState({liked: true});
 
     }
   }
@@ -62,18 +60,18 @@ class PostItemModalData extends React.Component {
   }
 
   render(){
+    // debugger
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
 
     return(
       <article className="modal-post-holder">
 
-
-        <div className="post-image-holder" onDoubleClick={this.likeAction}>
+        <div className="modal-post-image" onDoubleClick={this.likeAction}>
           <img className="responsive-image" src={this.props.post.url} alt={this.props.post.url} height="300px" width="100%"/>
         </div>
 
-        <div>
+        <div className="modal-post-data">
           <header className="post-header">
             <Link to="" className="">
               <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="30px" height="30px" />
@@ -84,6 +82,7 @@ class PostItemModalData extends React.Component {
               </Link>
             </div>
           </header>
+
           <div className="post-footer">
             <section className="post-footer-icons">
               <Link onClick={this.likeAction}>
@@ -104,7 +103,6 @@ class PostItemModalData extends React.Component {
 
             <section className="post-footer-items">
               <ul>
-
                 {
                   this.props.post.comments.map( comment => (
                     <CommentItem

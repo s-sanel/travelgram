@@ -1,7 +1,7 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/posts_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/likes_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comments_actions';
-import { merge } from 'lodash/merge';
+import merge from 'lodash/merge';
 import { getIndex } from '../util/util';
 
 
@@ -19,20 +19,20 @@ const PostsReducer = (oldState = {}, action) => {
       delete newState[action.post.id];
       return newState;
     case RECEIVE_LIKE:
-      let copyState = Object.assign({}, oldState);
+      let copyState = merge({}, oldState);
       copyState[action.like.post_id].likes.push(action.like);
       return copyState;
     case REMOVE_LIKE:
-      let nextState = Object.assign({}, oldState);
+      let nextState = merge({}, oldState);
       let likeIndex = getIndex(nextState[action.like.post_id].likes, action.like);
       nextState[action.like.post_id].likes.splice(likeIndex, 1);
       return nextState;
     case RECEIVE_COMMENT:
-      let copyAddComState = Object.assign({}, oldState);
+      let copyAddComState = merge({}, oldState);
       copyAddComState[action.comment.post_id].comments.push(action.comment);
       return copyAddComState;
     case REMOVE_COMMENT:
-      let copyRemComState = Object.assign({}, oldState);
+      let copyRemComState = merge({}, oldState);
       let commentIndex = getIndex(copyRemComState[action.comment.post_id].comments, action.comment);
       copyRemComState[action.comment.post_id].comments.splice(commentIndex, 1);
       return copyRemComState;
