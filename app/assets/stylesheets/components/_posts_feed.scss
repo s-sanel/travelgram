@@ -46,7 +46,7 @@
 }
 
 .post-image-holder:hover {
-  opacity: 0.9;
+  // opacity: 0.9;
 }
 
 .gray-link{
@@ -82,15 +82,19 @@
 }
 
 .post-footer-icons a:hover {
-  color:$dark-gray;
-  -webkit-transition: color 0.2s ease-out;
-  -moz-transition: color 0.2s ease-out;
-  -o-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  // color:$dark-gray;
+  // -webkit-transition: color 0.2s ease-out;
+  // -moz-transition: color 0.2s ease-out;
+  // -o-transition: color 0.2s ease-out;
+  // transition: color 0.2s ease-out;
 }
 
 .post-footer-likes {
   margin-bottom: 10px;
+}
+
+.red {
+  color: red;
 }
 
 .post-footer-items {

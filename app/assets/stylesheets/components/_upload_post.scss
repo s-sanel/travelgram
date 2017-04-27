@@ -12,7 +12,7 @@
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .upload-post-preview {
@@ -30,14 +30,50 @@
   width: 100%;
   max-width: 500px;
   max-height: 100px;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 
-border: 1px solid $input-border;
-color: $gray-link;
-font-size: 14px;
-// overflow:scroll;
-// overflow-y:scroll;
-// overflow-x:hidden;
+  border: 1px solid $input-border;
+  color: $gray-link;
+  font-size: 14px;
+  // overflow:scroll;
+  // overflow-y:scroll;
+  // overflow-x:hidden;
+}
+
+.submit-post {
+  background: $insta-blue;
+  border-color: $insta-blue;
+  color: $white;
+  font-size: 14px;
+  padding: 4px;
+  width: 140px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px auto 20px;;
+}
+
+
+.choose_file{
+    position:relative;
+    display:inline-block;
+	  border-radius:8px;
+    border:$light-gray solid 1px;
+    width:90%;
+    height: 100%;
+    padding: 4px 6px 4px 8px;
+    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+    color: #7f7f7f;
+    margin-top: 2px;
+	  background:white;
+    cursor: pointer;
+}
+.choose_file input[type="file"]{
+    -webkit-appearance:none;
+    position:absolute;
+    top:50%; left:0;
+    opacity:0;
+    cursor: pointer;
 }

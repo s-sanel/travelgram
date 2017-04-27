@@ -83,6 +83,7 @@
   justify-content: flex-start;
   box-sizing: border-box;
 }
+
 .user-profile-image-holder {
   width: 31.3%;
 	margin: 0 3.05% 3.05% 3.05%;
@@ -92,8 +93,48 @@
   position: relative;
 }
 
+.user-profile-image-holder:before{
+    content: "";
+    display: block;
+    padding-top: 100%;  /* ratio of 1:1*/
+}
+
+.container-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.container-image > img {
+  border-radius: 2px;
+}
+
+.img-wrap {
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  filter: brightness(100%);
+}
+
+.img-wrap:hover {
+  -webkit-filter: brightness(70%);
+	-moz-filter: brightness(70%);
+	-o-filter: brightness(70%);
+	-ms-filter: brightness(70%);
+	filter: brightness(70%);
+}
+
+
+.user-profile-image-holder:hover img {
+    // opacity: 0.8;
+}
+
+
 .user-profile-image-holder:hover {
-  opacity: 0.7;
+  // opacity: 0.7;
 }
 
 .user-profile-image-holder:nth-of-type(3n+1) {
@@ -107,6 +148,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -20px;
-  margin-top: -10px;
+  display: none;
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.user-profile-image-holder:hover .user-profile-image-holder-data{
+  display: block;
+  cursor: pointer;
 }

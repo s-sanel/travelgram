@@ -9,7 +9,16 @@ class EditProfile extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {name: "", username: "", website: "", bio: "test bio"};
-    this.state = this.props.user;
+    // this.state = this.props.user;
+    this.state = {
+      name: this.props.user.name,
+      username: this.props.user.username,
+      bio: this.props.user.bio,
+      website: this.props.user.website,
+      imageFile: null,
+      imageUrl: null
+    };
+    this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -19,12 +28,33 @@ class EditProfile extends React.Component {
   componentWillReceiveProps(newProps){
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    const user = this.state;
-    this.props.updateUser(user).then(() => this.props.router.push(`/users/${this.props.user.id}`));
-    // change route to user pr
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => this.setState({ imageFile: file, imageUrl: fileReader.result });
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
+
+
+  handleSubmit(e){
+    let formData = new FormData();
+    formData.append("user[id]", this.props.user.id);
+    formData.append("user[name]", this.state.name);
+    formData.append("user[username]", this.state.username);
+    // formData.append("user[bio]", this.state.bio);
+    // formData.append("user[website]", this.state.website);
+    formData.append("user[image]", this.state.imageFile);
+    this.props.updateUser(formData).then(() => this.props.router.push(`/users/${this.props.user.id}`));
+  }
+
+  // handleSubmit(e){
+  //   e.preventDefault();
+  //   const user = this.state;
+  //   this.props.updateUser(user).then(() => this.props.router.push(`/users/${this.props.user.id}`));
+  // }
 
   update(field) {
     return e => this.setState({
@@ -46,11 +76,15 @@ class EditProfile extends React.Component {
               </div>
             </div>
             <div className="edit-profile-data">
-
+              
+              <input type="file" onChange={this.updateFile} name="change photo"/>
               <div className="edit-profile-form-header">
 
                 <aside className="edit-profile-header-img">
-                  <img src={profile_photo} width="40px" height="40px" title="profile img"/>
+
+                    <img src={profile_photo} width="40px" height="40px" title="profile img"/>
+                    <img src={this.state.imageUrl} className="" width="40px" height="40px" />
+
                 </aside>
                 <div className="edit-profile-header-name">
                   {this.props.currentUser.username}

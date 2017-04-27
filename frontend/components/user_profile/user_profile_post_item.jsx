@@ -15,13 +15,13 @@ class UserProfilePostItem extends React.Component {
   render(){
     return(
       <div className="user-profile-image-holder">
-        <a>
-          <img className="" src={this.props.post.url} alt={this.props.post.url} height="100%" width="100%"/>
+        <a className="container-image">
+          <img className="img-wrap" src={this.props.post.url} alt={this.props.post.url} height="100%" width="100%"/>
+          <div className="user-profile-image-holder-data">
+            <i className="fa fa-comment" aria-hidden="true"></i> {this.props.post.comments.length} &nbsp;
+            <i className="fa fa-heart" aria-hidden="true"></i> {this.props.post.likes.length}
+          </div>
         </a>
-        <div className="user-profile-image-holder-data">
-          <i className="fa fa-comment-o" aria-hidden="true"></i> {this.props.post.comments.length} &nbsp;
-          <i className="fa fa-heart-o" aria-hidden="true"></i> {this.props.post.likes.length}
-        </div>
       </div>
     );
   }

@@ -47,7 +47,7 @@ class PostItem extends React.Component {
 
   heartClass() {
     if (this.isLikedByUser()){
-      return "fa fa-heart";
+      return "fa fa-heart red";
     } else {
       return "fa fa-heart-o";
     }

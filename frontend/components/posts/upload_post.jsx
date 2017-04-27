@@ -43,7 +43,7 @@ class UploadPost extends React.Component {
   }
 
   render() {
-    // 
+    //
     // if(this.props.currentUser.username) {
     //   return <h1>loadin....</h1>;
     // }
@@ -57,8 +57,10 @@ class UploadPost extends React.Component {
 
           <form className="upload-post-article">
             <div className="upload-post-preview">
-
-              <input type="file" onChange={this.updateFile}/> <br /> <br />
+              <div className="choose_file">
+                 <span>Choose File</span>
+                 <input type="file" onChange={this.updateFile}/>
+             </div>
               <img src={this.state.imageUrl} className="" width="100%" height="auto"/>
             </div>
             <div className="upload-post-caption">
@@ -66,7 +68,7 @@ class UploadPost extends React.Component {
               </textarea>
             </div>
 
-            <input type="submit" onClick={this.handleSubmit} value="Submit Post" />
+            <input className="submit-post" type="submit" onClick={this.handleSubmit} value="Submit Post" />
           </form>
         </div>
       </div>

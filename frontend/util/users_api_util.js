@@ -13,9 +13,21 @@ export const fetchUser = (id) => {
 };
 
 export const updateUser = (user) => {
+  
   return $.ajax({
     method: "PATCH",
-    url: `/api/users/${user.id}`,
-    data: {user}
+    url: `/api/users/${user.get('user[id]')}`,
+    dataType: 'json',
+    contentType: false,
+    processData: false,
+    data: user
   });
 };
+
+// export const updateUser = (user) => {
+//   return $.ajax({
+//     method: "PATCH",
+//     url: `/api/users/${user.id}`,
+//     data: {user}
+//   });
+// };
