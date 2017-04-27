@@ -48,7 +48,7 @@ class AddCommentForm extends React.Component {
             <input type="submit" value="POST" className={submitClass}/>
           </form>
         </section>
-      )
+      );
 
     }
 
