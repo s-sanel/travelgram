@@ -103,10 +103,10 @@ post25 = Post.create(image: File.open("app/assets/images/malaga_ruins.JPG"), des
 post18 = Post.create(image: File.open("app/assets/images/tutin.jpg"), description: "Looks like Tuscany but…", user_id: pam.id)
 post19 = Post.create(image: File.open("app/assets/images/coffee.JPG"), description: "Turksih Coffee on the Balkan roadside", user_id: guest.id)
 
-post20 = Post.create(image: File.open("app/assets/images/bbridge.jpg"), description: "Brooklyn Bridge sunsets", user_id: lela.id)
-post21 = Post.create(image: File.open("app/assets/images/spring-bloom.JPG"), description: "Spring in full bloom", user_id: shannon.id)
-post22 = Post.create(image: File.open("app/assets/images/imagine.JPG"), description: "Imagine all the peopleeeeee…", user_id: guest.id)
 post23 = Post.create(image: File.open("app/assets/images/al-hambra.jpg"), description: "Al-Hambra exuding feng shui balance", user_id: lela.id)
+post22 = Post.create(image: File.open("app/assets/images/imagine.JPG"), description: "Imagine all the peopleeeeee…", user_id: guest.id)
+post21 = Post.create(image: File.open("app/assets/images/spring-bloom.JPG"), description: "Spring in full bloom", user_id: shannon.id)
+post20 = Post.create(image: File.open("app/assets/images/bbridge.jpg"), description: "Brooklyn Bridge sunsets", user_id: lela.id)
 # guest.posts.create(image: File.open("app/assets/images/beach.jpg"), description: "")
 # guest.likes.create()
 
