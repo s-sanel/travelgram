@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
 
   has_attached_file :image, default_url: "beach.jpg"
+  has_attached_file :image, s3_protocol: :https, default_url: "beach.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :user

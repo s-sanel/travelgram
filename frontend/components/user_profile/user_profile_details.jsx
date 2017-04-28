@@ -31,6 +31,7 @@ class UserProfileDetails extends React.Component {
     if (!user.name) return <Spinner />;
 
     let name = this.props.user ? user.name : "";
+    let bio = this.props.user ? user.bio : "";
     let profile_photo = this.props.user ? user.profile_photo : "";
 
     return(
@@ -65,7 +66,7 @@ class UserProfileDetails extends React.Component {
               {name}
             </div>
             <div className="profile-data-stats-data">
-              Bio...
+              {bio}
             </div>
 
           </div>
