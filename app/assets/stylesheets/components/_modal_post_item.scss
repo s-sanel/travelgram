@@ -1,13 +1,118 @@
 .modal-post-holder{
   display: flex;
+  // position: relative;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .modal-post-image {
   flex-grow: 3;
-  width: 65%
+  width: 65%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.a{
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-post-data {
   flex-grow: 1;
-  width: 35%;
+  // width: 35%;
+  width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.rem-margin {
+  margin-bottom: -20px;
+}
+
+.modal-close-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 12;
+  font-size: 20px;
+  color: $gray-link;
+}
+
+.new-header {
+  border-bottom: 1px solid #efefef;
+  height: 78px;
+  margin-right: 0;
+  padding: 20px 0;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  width: 287px;
+}
+
+.add-com{
+  position: absolute;
+  bottom: 0;
+}
+
+.comments-scrollable {
+  // height: auto;
+  // height: 200px;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: calc(100% - 30px);
+}
+
+.modal-data {
+  border-bottom: 1px solid $gray;
+  // height: 78px;
+  margin-right: 0;
+  padding: 20px 0;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  width: 287px;
+}
+
+.modal-item-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profile-image {
+
+}
+
+.modal-ddd {
+  bottom: 0;
+    box-sizing: border-box;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: absolute;
+    right: 0;
+    top: 78px;
+    width: 335px;
+}
+
+
+.single-post-footer-items {
+  max-height: 280px;
+  height: 280px;
+  overflow-y: scroll;
+  padding: 15px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.btm{
+  position: fixed;
+  bottom: 5px;
+  width: 290px;
+}
+
+.padded {
+  padding: 15px;
 }

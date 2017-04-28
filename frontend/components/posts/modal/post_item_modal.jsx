@@ -56,7 +56,7 @@ class PostItemModal extends React.Component {
           onAfterOpen={this.onModalOpen}
           contentLabel="Modal"
           >
-
+          <Link onClick={this.closeModal} className="modal-close-btn"><i className="fa fa-times-circle" aria-hidden="true"></i></Link>
           <PostItemModalData
             key={this.props.post.id}
             post={this.props.post}
@@ -66,6 +66,7 @@ class PostItemModal extends React.Component {
             deleteLike={this.props.deleteLike}
             createComment={this.props.createComment}
             deleteComment={this.props.deleteComment}
+            closeModal={this.closeModal}
           />
 
          </Modal>

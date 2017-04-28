@@ -2,24 +2,12 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import CommentItem from '../comment_item';
 import AddCommentForm from '../add_comment_form';
+import FollowContainer from '../../follow/follow_container';
 
 class PostItemModalData extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {liked: false};
     this.likeAction = this.likeAction.bind(this);
-  }
-
-  componentDidMount(){
-    if(this.isLikedByUser()){
-      this.setState({liked: true});
-    }else {
-      this.setState({liked: false});
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-    // debugger
   }
 
   isLikedByUser(){
@@ -63,73 +51,82 @@ class PostItemModalData extends React.Component {
     // debugger
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
+    let followContainer = this.props.post.user.id == this.props.currentUser.id ? "" : <FollowContainer />;
 
     return(
       <article className="modal-post-holder">
 
         <div className="modal-post-image" onDoubleClick={this.likeAction}>
-          <img className="responsive-image" src={this.props.post.url} alt={this.props.post.url} height="300px" width="100%"/>
+          <img className="" width="100%" height="540px" src={this.props.post.url} alt={this.props.post.url} />
         </div>
 
-        <div className="modal-post-data">
-          <header className="post-header">
-            <Link to="" className="">
-              <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="30px" height="30px" />
-            </Link> &nbsp;
-            <div className="post-header-data">
-              <Link onClick={this.profilePage} className="gray-link">
-                {this.props.post.user.username}
-              </Link>
-            </div>
-          </header>
+        <div className="a">
 
-          <div className="post-footer">
-            <section className="post-footer-icons">
-              <Link onClick={this.likeAction}>
-                <i className={this.heartClass()} aria-hidden="true"></i>
-              </Link>
-              <Link onClick={this.focusToAddComment} id={post_id}>
-                <i className="fa fa-comment-o" aria-hidden="true"></i>
-              </Link>
-            </section>
+          <div className="modal-post-data">
 
-            <section className="post-footer-likes bold">
-              {this.props.post.likes.length} likes
-            </section>
+            <header className="post-header item-header">
+              <Link onClick={this.props.closeModal} className="">
+                <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="40px" height="40px" />
+              </Link> &nbsp;
+              <div className="post-header-data">
+                <Link onClick={this.props.closeModal} className="gray-link">
+                  {this.props.post.user.username}
+                </Link>
+              </div>
+              <div>
+                {followContainer}
+              </div>
+            </header>
 
-            <div>
-              <span className="bold">{this.props.post.user.username}</span>  {this.props.post.description}
-            </div>
-
-            <section className="post-footer-items">
-              <ul>
+            <section className="single-post-footer-items">
+              <div>
+                <span className="bold">{this.props.post.user.username}</span>  {this.props.post.description}
+              </div>
+              <ul className="">
                 {
-                  this.props.post.comments.map( comment => (
-                    <CommentItem
-                      key={comment.id}
-                      comment={comment}
-                      currentUser={this.props.currentUser}
-                      deleteComment={this.props.deleteComment}
-                    />
-                  ))
+                this.props.post.comments.map( comment => (
+                  <CommentItem
+                    key={comment.id}
+                    comment={comment}
+                    currentUser={this.props.currentUser}
+                    deleteComment={this.props.deleteComment}
+                  />
+                ))
                 }
               </ul>
             </section>
 
-            <section className="post-footer-time-ago">
-              {this.props.post.created_ago} ago
-            </section>
+            <div className="post-footer btm">
+              <section className="post-footer-icons">
+                <Link onClick={this.likeAction}>
+                  <i className={this.heartClass()} aria-hidden="true"></i>
+                </Link>
+                <Link onClick={this.focusToAddComment} id={post_id}>
+                  <i className="fa fa-comment-o" aria-hidden="true"></i>
+                </Link>
+              </section>
+              <section className="post-footer-likes bold">
+                {this.props.post.likes.length} likes
+              </section>
+              <section className="post-footer-time-ago">
+                {this.props.post.created_ago} ago
+              </section>
+              <div className="">
+                <AddCommentForm
+                  post={this.props.post}
+                  createComment={this.props.createComment}/>
+              </div>
+             </div>
 
-            <AddCommentForm
-              post={this.props.post}
-              createComment={this.props.createComment}
-            />
 
 
-          </div>
+
+           </div>
         </div>
 
       </article>
+
+
     );
 
   }

@@ -69,11 +69,14 @@
     margin-top: 2px;
 	  background:white;
     cursor: pointer;
+    padding: 5px;
 }
 .choose_file input[type="file"]{
     -webkit-appearance:none;
     position:absolute;
-    top:50%; left:0;
+    top:0; left:0;
     opacity:0;
     cursor: pointer;
+    width: 100%;
+    padding: 5px
 }
