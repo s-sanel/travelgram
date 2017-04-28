@@ -18,52 +18,52 @@ Follow.destroy_all
 guest = User.create(username: "guest", name:"Sanel Selmanovic",
                     email: "sanel@gmail.com", password: "123456",
                     image: File.open("app/assets/images/ghost.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 pam = User.create(username: "pam360", name:"Priscilla Molina",
                     email: "pam360@gmail.com", password: "password",
                     image: File.open("app/assets/images/girl-avatar.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 lela = User.create(username: "Leana1121", name:"Leana Selmanovic",
                     email: "Leana1121@gmail.com", password: "password",
                     image: File.open("app/assets/images/girl-avatar.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 naida = User.create(username: "Naida1606", name:"Naida Sabanovic",
                     email: "Naida1606@gmail.com", password: "password",
                     image: File.open("app/assets/images/girl-avatar.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 shannon = User.create(username: "Jewel71185", name:"Shannon Farrer",
                     email: "Jewel71185@gmail.com", password: "password",
                     image: File.open("app/assets/images/girl-avatar.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 enir = User.create(username: "Enir790", name:"Enir Loncarevic",
                     email: "Enir790@gmail.com", password: "password",
                     image: File.open("app/assets/images/bearded.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 pablo = User.create(username: "PabloTour2016", name:"Kanye West",
                     email: "PabloTour2016@gmail.com", password: "password",
                     image: File.open("app/assets/images/bearded.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 scarface = User.create(username: "Scarface007", name:"Al Pacino",
                     email: "Scarface007@gmail.com", password: "password",
                     image: File.open("app/assets/images/ghost.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 rocky = User.create(username: "Rocky84", name:"Balboa Fan",
                     email: "Rocky84@gmail.com", password: "password",
                     image: File.open("app/assets/images/ghost.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 george = User.create(username: "George1776", name:"Mr. Washington",
                     email: "George1776@gmail.com", password: "password",
                     image: File.open("app/assets/images/ghost.jpg"),
-                    bio: "")
+                    bio: "I am a traveler")
 
 
 # Posts
@@ -78,34 +78,34 @@ george = User.create(username: "George1776", name:"Mr. Washington",
 # post13 = Post.create(image: File.open("app/assets/images/began.jpg"), description: "Where it all began… the ultimate Flashback Fridaya", user_id: george.id)
 
 post2 = Post.create(image: File.open("app/assets/images/granada.JPG"), description: "A doorway into the Old World. Granada.", user_id: naida.id)
-post1 = Post.create(image: File.open("app/assets/images/spy-eye.jpg"), description: "I spy the London Eye", user_id: guest.id)
-post3 = Post.create(image: File.open("app/assets/images/darkest.jpg"), description: "It is during our darkest moments that we must focus to see the light. –Aristotle", user_id: guest.id)
-post4 = Post.create(image: File.open("app/assets/images/sunset.jpg"), description: "Sunsets on the Costa del Sol...", user_id: pam.id)
+post1 = Post.create(image: File.open("app/assets/images/spy-eye.JPG"), description: "I spy the London Eye", user_id: guest.id)
+post3 = Post.create(image: File.open("app/assets/images/darkest.JPG"), description: "It is during our darkest moments that we must focus to see the light. –Aristotle", user_id: guest.id)
+post4 = Post.create(image: File.open("app/assets/images/sunset.JPG"), description: "Sunsets on the Costa del Sol...", user_id: pam.id)
 post5 = Post.create(image: File.open("app/assets/images/budva.jpg"), description: "Montenegro’s seaside town of Budva", user_id: enir.id)
-post6 = Post.create(image: File.open("app/assets/images/plaza-de-esp.jpg"), description: "Plaza de Espana. Que lindo!", user_id: guest.id)
-post7 = Post.create(image: File.open("app/assets/images/seville.jpg"), description: "Sevilla by night", user_id: naida.id)
+post6 = Post.create(image: File.open("app/assets/images/plaza-de-esp.JPG"), description: "Plaza de Espana. Que lindo!", user_id: guest.id)
+post7 = Post.create(image: File.open("app/assets/images/seville.JPG"), description: "Sevilla by night", user_id: naida.id)
 post8 = Post.create(image: File.open("app/assets/images/gg-park.jpg"), description: "Golden Gate park… the forest comes to the city!", user_id: rocky.id)
-post9 = Post.create(image: File.open("app/assets/images/dream.jpg"), description: "I have a dream…", user_id: george.id)
+post9 = Post.create(image: File.open("app/assets/images/dream.JPG"), description: "I have a dream…", user_id: george.id)
 post10 = Post.create(image: File.open("app/assets/images/antelope.jpg"), description: "Antelope Canyon... do you see the faces in the stone?", user_id: naida.id)
-post11 = Post.create(image: File.open("app/assets/images/grand-c2.jpg"), description: "I think I dropped something…", user_id: naida.id)
-post12 = Post.create(image: File.open("app/assets/images/roma.jpg"), description: "Roma… The history, the food, the sites…", user_id: guest.id)
-post13 = Post.create(image: File.open("app/assets/images/grand-c.jpg"), description: "Is a comment even really necessary?", user_id: shannon.id)
+post11 = Post.create(image: File.open("app/assets/images/grand-c2.JPG"), description: "I think I dropped something…", user_id: naida.id)
+post12 = Post.create(image: File.open("app/assets/images/roma.JPG"), description: "Roma… The history, the food, the sites…", user_id: guest.id)
+post13 = Post.create(image: File.open("app/assets/images/grand-c.JPG"), description: "Is a comment even really necessary?", user_id: shannon.id)
 post14 = Post.create(image: File.open("app/assets/images/san-fran.jpg"), description: "Nothing like San Francisco Bay breezes under the bridge on a sunny California day", user_id: george.id)
-post15 = Post.create(image: File.open("app/assets/images/jamaica.jpg"), description: "Negril, Jamaica = paradise", user_id: scarface.id)
+post15 = Post.create(image: File.open("app/assets/images/jamaica.JPG"), description: "Negril, Jamaica = paradise", user_id: scarface.id)
 
-post16 = Post.create(image: File.open("app/assets/images/sedona.jpg"), description: "Sedona red rock formations through a Joshua tree", user_id: pam.id)
+# post16 = Post.create(image: File.open("app/assets/images/sedona.JPG"), description: "Sedona red rock formations through a Joshua tree", user_id: pam.id)
 post17 = Post.create(image: File.open("app/assets/images/ny.jpg"), description: "Concrete jungle where dreams are made of", user_id: guest.id)
 
 
-post24 = Post.create(image: File.open("app/assets/images/giralda.jpg"), description: "View of the Cathedral from inside Seville’s enchanting Giralda tower", user_id: pam.id)
-post25 = Post.create(image: File.open("app/assets/images/malaga_ruins.jpg"), description: "Serenity walking Malaga’s ruins", user_id: guest.id)
+post24 = Post.create(image: File.open("app/assets/images/giralda.JPG"), description: "View of the Cathedral from inside Seville’s enchanting Giralda tower", user_id: pam.id)
+post25 = Post.create(image: File.open("app/assets/images/malaga_ruins.JPG"), description: "Serenity walking Malaga’s ruins", user_id: guest.id)
 
 post18 = Post.create(image: File.open("app/assets/images/tutin.jpg"), description: "Looks like Tuscany but…", user_id: pam.id)
-post19 = Post.create(image: File.open("app/assets/images/coffee.jpg"), description: "Turksih Coffee on the Balkan roadside", user_id: guest.id)
+post19 = Post.create(image: File.open("app/assets/images/coffee.JPG"), description: "Turksih Coffee on the Balkan roadside", user_id: guest.id)
 
 post20 = Post.create(image: File.open("app/assets/images/bbridge.jpg"), description: "Brooklyn Bridge sunsets", user_id: lela.id)
-post21 = Post.create(image: File.open("app/assets/images/spring-bloom.jpg"), description: "Spring in full bloom", user_id: shannon.id)
-post22 = Post.create(image: File.open("app/assets/images/imagine.jpg"), description: "Imagine all the peopleeeeee…", user_id: guest.id)
+post21 = Post.create(image: File.open("app/assets/images/spring-bloom.JPG"), description: "Spring in full bloom", user_id: shannon.id)
+post22 = Post.create(image: File.open("app/assets/images/imagine.JPG"), description: "Imagine all the peopleeeeee…", user_id: guest.id)
 post23 = Post.create(image: File.open("app/assets/images/al-hambra.jpg"), description: "Al-Hambra exuding feng shui balance", user_id: lela.id)
 # guest.posts.create(image: File.open("app/assets/images/beach.jpg"), description: "")
 # guest.likes.create()
@@ -161,7 +161,7 @@ Like.create(user_id: lela.id, post_id: post13.id)
 Like.create(user_id: lela.id, post_id: post14.id)
 
 Like.create(user_id: naida.id, post_id: post15.id)
-Like.create(user_id: naida.id, post_id: post16.id)
+# Like.create(user_id: naida.id, post_id: post16.id)
 Like.create(user_id: naida.id, post_id: post17.id)
 Like.create(user_id: naida.id, post_id: post18.id)
 

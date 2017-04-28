@@ -29,7 +29,6 @@ class NavLinks extends React.Component {
         <div className="main-nav-links">
           <div className="main-nav-explore">
             <a href="#" title="Discover">
-              <i className="fa fa-compass" aria-hidden="true"></i>
             </a>
           </div>
           <div className="upload-photo">
@@ -49,4 +48,5 @@ class NavLinks extends React.Component {
     }
 
 }
+// <i className="fa fa-compass" aria-hidden="true"></i>
 export default withRouter(NavLinks);

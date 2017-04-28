@@ -19,7 +19,6 @@ class Search extends React.Component {
       return (
         <div className="search">
           <form className="search-form">
-            <input type="text" name="search" placeholder="Search.." />
           </form>
         </div>
       );
@@ -27,4 +26,5 @@ class Search extends React.Component {
 
 }
 
+// <input type="text" name="search" placeholder="Search.." />
 export default withRouter(Search);
