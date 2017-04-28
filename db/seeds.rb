@@ -77,7 +77,7 @@ george = User.create(username: "George1776", name:"Mr. Washington",
 # post12 = Post.create(image: File.open("app/assets/images/desert-veg.jpg"), description: "Desert vegetation", user_id: lela.id)
 # post13 = Post.create(image: File.open("app/assets/images/began.jpg"), description: "Where it all began… the ultimate Flashback Fridaya", user_id: george.id)
 
-post2 = Post.create(image: File.open("app/assets/images/granada.jpg"), description: "A doorway into the Old World. Granada.", user_id: naida.id)
+post2 = Post.create(image: File.open("app/assets/images/granada.JPG"), description: "A doorway into the Old World. Granada.", user_id: naida.id)
 post1 = Post.create(image: File.open("app/assets/images/spy-eye.jpg"), description: "I spy the London Eye", user_id: guest.id)
 post3 = Post.create(image: File.open("app/assets/images/darkest.jpg"), description: "It is during our darkest moments that we must focus to see the light. –Aristotle", user_id: guest.id)
 post4 = Post.create(image: File.open("app/assets/images/sunset.jpg"), description: "Sunsets on the Costa del Sol...", user_id: pam.id)
