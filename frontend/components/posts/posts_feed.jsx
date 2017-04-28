@@ -23,7 +23,7 @@ class PostsFeed extends React.Component {
     if (this.props.fetching) return  <Spinner />;
     return (
       <section className="posts-feed">
-        <h1>Posts feed</h1>
+        <h2>&nbsp;</h2>
         <ul>
           {
             this.props.posts.map(post => (

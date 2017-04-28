@@ -48,7 +48,6 @@ class PostItemModalData extends React.Component {
   }
 
   render(){
-    // debugger
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
     let followContainer = this.props.post.user.id == this.props.currentUser.id ? "" : <FollowContainer />;

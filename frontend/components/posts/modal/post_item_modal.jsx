@@ -30,12 +30,8 @@ class PostItemModal extends React.Component {
     ModalStyle.content.opacity = 100;
   }
 
-  componentDidMount(){
-    // debugger
-  }
-  componentWillReceiveProps(){
-    // debugger
-  }
+  componentDidMount(){}
+  componentWillReceiveProps(){}
 
 
   render(){

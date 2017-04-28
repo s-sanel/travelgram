@@ -23,8 +23,11 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+    update_params = user_params
+    update_params = user_params_no_image if params[:user][:image] == "null"
+
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.update(update_params)
       render @user
       # "api/users/show"
     else
@@ -35,9 +38,11 @@ class Api::UsersController < ApplicationController
 
 
   private
-
   def user_params
-    params.require(:user).permit(:username, :password, :email, :name, :image)
+    params.require(:user).permit(:username, :password, :email, :name, :bio, :website, :image)
+  end
+  def user_params_no_image
+    params.require(:user).permit(:username, :password, :email, :name, :bio, :website)
   end
 
 end

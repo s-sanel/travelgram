@@ -1,6 +1,7 @@
 import { RECEIVE_USERS, RECEIVE_USER } from '../actions/users_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follows_actions';
 import { getIndexById } from '../util/util';
+import merge from 'lodash/merge';
 
 const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -8,10 +9,11 @@ const UsersReducer = (oldState = {}, action) => {
     case RECEIVE_USERS:
       return action.users;
     case RECEIVE_USER:
+
       // return Object.assign({}, oldState, {[action.user.id]: action.user});
       // return {[action.user.id]: action.user};
-      return action.user;
-
+      // return action.user;
+      return merge({}, oldState, action.user);
     case RECEIVE_FOLLOW:
       let copyAddFollow = Object.assign({}, oldState);
       copyAddFollow.followers.push(action.follow.follower);

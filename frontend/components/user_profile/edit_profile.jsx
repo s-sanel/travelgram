@@ -44,8 +44,8 @@ class EditProfile extends React.Component {
     formData.append("user[id]", this.props.user.id);
     formData.append("user[name]", this.state.name);
     formData.append("user[username]", this.state.username);
-    // formData.append("user[bio]", this.state.bio);
-    // formData.append("user[website]", this.state.website);
+    formData.append("user[bio]", this.state.bio);
+    formData.append("user[website]", this.state.website);
     formData.append("user[image]", this.state.imageFile);
     this.props.updateUser(formData).then(() => this.props.router.push(`/users/${this.props.user.id}`));
   }
@@ -76,7 +76,7 @@ class EditProfile extends React.Component {
               </div>
             </div>
             <div className="edit-profile-data">
-              
+
               <input type="file" onChange={this.updateFile} name="change photo"/>
               <div className="edit-profile-form-header">
 

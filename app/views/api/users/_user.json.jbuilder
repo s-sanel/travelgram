@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :name, :email
+json.extract! user, :id, :username, :name, :email, :bio, :website
 json.profile_photo asset_path(user.image.url)
 
 json.followers user.followers
