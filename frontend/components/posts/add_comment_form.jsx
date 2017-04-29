@@ -14,6 +14,7 @@ class AddCommentForm extends React.Component {
       let postId = this.props.post.id;
       let body = this.state.body;
       this.props.createComment(postId, body).then(() => this.resetState());
+      if (this.props.incrementCommentCount) this.props.incrementCommentCount();
     }
 
     update(field) {

@@ -6,18 +6,17 @@ import AddCommentForm from './add_comment_form';
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {liked: false};
+
+    this.state = { comment_count: 3}
     this.profilePage = this.profilePage.bind(this);
     this.likeAction = this.likeAction.bind(this);
+    this.showMoreComments = this.showMoreComments.bind(this);
+    this.incrementCommentCount = this.incrementCommentCount.bind(this);
   }
 
-  componentDidMount(){
-    // if(this.isLikedByUser()){
-    //   this.setState({liked: true});
-    // }else {
-    //   this.setState({liked: false});
-    // }
-  }
+  componentDidMount(){}
+
+  componentWillReceiveProps(newProps){}
 
   profilePage(){
     let id = this.props.post.user.id;
@@ -37,11 +36,8 @@ class PostItem extends React.Component {
   likeAction(){
     if(this.isLikedByUser()){
       this.props.deleteLike(this.props.post.id);
-      // this.setState({liked: false});
     } else {
       this.props.createLike(this.props.post.id);
-      // this.setState({liked: true});
-
     }
   }
 
@@ -61,9 +57,32 @@ class PostItem extends React.Component {
     }
   }
 
+  showMoreComments(){
+    let current = this.state.comment_count;
+    this.setState({comment_count: current + 5 });
+  }
+
+  incrementCommentCount(){
+    let current = this.state.comment_count;
+    this.setState({comment_count: current+1})
+    debugger
+  }
+
+  renderShowMoreComments(){
+    if (this.props.post.comments.length > this.state.comment_count){
+      return(
+        <li className="">
+          <Link onClick={this.showMoreComments} className="load-more-comments">load more comments...</Link>
+        </li>
+      )
+    }
+  }
+
   render(){
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
+    let start = this.props.post.comments.length - this.state.comment_count;
+    if (start < 0) start = 0;
 
     return(
       <article className="post-box">
@@ -102,11 +121,9 @@ class PostItem extends React.Component {
 
           <section className="post-footer-items">
             <ul>
-              <li className="post-footer-time-ago">
-                load more comments if {this.props.post.comments.length} > 5
-              </li>
+              {this.renderShowMoreComments()}
               {
-                this.props.post.comments.map( comment => (
+                this.props.post.comments.slice(start, this.props.post.comments.length).map( comment => (
                   <CommentItem
                     key={comment.id}
                     comment={comment}
@@ -125,6 +142,7 @@ class PostItem extends React.Component {
           <AddCommentForm
             post={this.props.post}
             createComment={this.props.createComment}
+            incrementCommentCount={this.incrementCommentCount}
           />
 
 
