@@ -1,30 +1,86 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import SearchResultItem from './search_result_item'
 
 class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleLogout = this.handleLogout.bind(this);
+    this.state = {
+      query: "",
+      active: false
+    };
+
+    this.handleInput = this.handleInput.bind(this);
+    this.closeResultsList = this.closeResultsList.bind(this);
   }
 
-  handleLogout(e) {
+  componentDidMount() {
+    window.addEventListener("click", this.handleClick);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.handleClick);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.user !== nextProps.user) {
+      this.setState({ body: '' });
+    }
+  }
+
+  handleInput(e) {
     e.preventDefault();
-    this.props.logout().then(() => this.props.router.push('/signup'));
+    let query = e.target.value;
+    if(query === "") {
+      this.props.removeSearchResults();
+      this.setState({query: "", active: false});
+    }else {
+      this.setState({
+        query: query,
+        active: true },
+        () => this.props.fetchSearchResults(this.state.query));
+    }
+  }
+
+  closeResultsList(){
+    this.setState({query: "", active: false});
   }
 
 
   render() {
 
-      return (
-        <div className="search">
-          <form className="search-form">
-          </form>
+  let resultsList = ""
+  if( this.state.active) {
+    resultsList =
+      <div className="search-results">
+        <div className="triangle">
+          <div className="empty"></div>
         </div>
-      );
+
+        <ul className="search-results-list">
+          { this.props.searchResults.map((user) =>
+            <SearchResultItem key={user.id} user={user} closeResultsList={this.closeResultsList}/>)
+          }
+        </ul>
+        
+      </div>;
+    }
+
+  return (
+    <div className="search">
+      <form className="search-form">
+        <input type="text" name="search" placeholder="Search.."
+          value={this.state.query} onChange={this.handleInput}/>
+      </form>
+
+      {resultsList}
+      </div>
+    );
+
+
   }
 
 }
 
-// <input type="text" name="search" placeholder="Search.." />
 export default withRouter(Search);

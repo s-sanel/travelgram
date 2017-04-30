@@ -1,16 +1,25 @@
-import { connect } from "react-redux";
-import { logout  } from "../../actions/session_actions";
-import Search from './search';
+  import { connect } from "react-redux";
+  import Search from './search';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
-});
+  import { fetchSearchResults, removeSearchResults } from '../../actions/search_actions';
+  import { fetchUser } from '../../actions/users_actions';
 
-const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
-});
+  const mapStateToProps = (state) => {
+    return {
+      user: state.user,
+      searchResults: state.searchResults
+    };
+  };
 
-export default connect (
-  mapStateToProps,
-  mapDispatchToProps
-)(Search);
+  const mapDispatchToProps = (dispatch) => {
+    return{
+      fetchSearchResults: (query) => dispatch(fetchSearchResults(query)),
+      removeSearchResults: () => dispatch(removeSearchResults()),
+      fetchUser: (id) => dispatch(fetchUser(id))
+    };
+  };
+
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Search);
