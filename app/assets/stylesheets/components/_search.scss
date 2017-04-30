@@ -5,13 +5,12 @@
   position: absolute;
   top: 70px;
   margin: 0 auto;
-
-
   z-index: 111;
 }
 
 .search-results-list {
   overflow-y: scroll;
+  max-height: 600px;
   border-top: 1px solid $light-gray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -68,9 +67,19 @@
   color: $gray;
 }
 
-.float-left {
-  float: left;
+
+.search-no-results {
+  color: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 450;
+  cursor: default;
+  height: 50px;
+  border-bottom: 1px solid $light-gray;
+  padding: 5px 10px;
 }
+
 
 .triangle {
     position: relative;

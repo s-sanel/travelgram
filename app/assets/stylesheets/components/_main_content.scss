@@ -94,21 +94,43 @@
 }
 
 // SEACH input
-form.seach-form input {
-    width: 140px;
-    box-sizing: border-box;
-    border: 2px solid $input-border;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: black;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
+// form.seach-form input {
+//     width: 140px;
+//
+//     box-sizing: border-box;
+//     border: 2px solid $input-border;
+//     border-radius: 4px;
+//     font-size: 16px;
+//     background-color: black;
+//     background-image: image-url('search.png');
+//     background-position: 10px 10px;
+//     background-repeat: no-repeat;
+//     padding: 12px 20px 12px 40px;
+//     -webkit-transition: width 0.4s ease-in-out;
+//     transition: width 0.4s ease-in-out;
+// }
 
 .search-form input[type=text]:focus {
-    width: 100%;
+    // width: 100%;
+}
+
+.search-form {
+
+  height: 30px;
+}
+
+.search-form > input {
+  background-image: image-url('search.png');
+  background-size: 17px 17px;
+  background-position:5px 3px;
+  background-repeat: no-repeat;
+
+  border: solid 1px #dbdbdb;
+  border-radius: 3px;
+  color: $gray-link;
+  font-size: 14px;
+  outline: none;
+  padding: 3px 10px 3px 26px;
+  z-index: 2;
+  height: 19px;
 }

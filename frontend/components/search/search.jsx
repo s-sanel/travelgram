@@ -13,6 +13,13 @@ class Search extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.closeResultsList = this.closeResultsList.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    if (this.state.query) {
+      this.setState({ active: false });
+    }
   }
 
   componentDidMount() {
@@ -47,8 +54,21 @@ class Search extends React.Component {
     this.setState({query: "", active: false});
   }
 
+  renderResults(){
+    if(this.props.searchResults.length > 0) {
+      return(
+        this.props.searchResults.map((user) =>
+          <SearchResultItem key={user.id} user={user} closeResultsList={this.closeResultsList}/>)
+
+      )
+    }else {
+      return <div className="search-no-results"><span>No results found.</span></div>
+    }
+  }
 
   render() {
+
+
 
   let resultsList = ""
   if( this.state.active) {
@@ -59,11 +79,9 @@ class Search extends React.Component {
         </div>
 
         <ul className="search-results-list">
-          { this.props.searchResults.map((user) =>
-            <SearchResultItem key={user.id} user={user} closeResultsList={this.closeResultsList}/>)
-          }
+          {this.renderResults()}
         </ul>
-        
+
       </div>;
     }
 
