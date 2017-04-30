@@ -163,3 +163,13 @@
   display: block;
   cursor: pointer;
 }
+
+.profile-image-button {
+  border-radius: 50%;
+  background-color: $lightest-gray;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid $light-gray;
+  padding: 0px;
+}

@@ -1,0 +1,104 @@
+.modal {
+  background: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 510px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// need this for x button outside the modal
+.logout-modal, .profile-photo-modal{
+  border: 0px;
+  outline-style: none;
+  width: 0px;
+  height: 0px;
+  // font-family: 'proxima-nova', 'Montserrat','Helvitica Neue', Arial, Helvetica, sans-serif;
+}
+
+
+// .profile-pic-modal {
+//   height: 150px;
+// }
+
+.no-click{
+  display: block;
+  font-weight: bold;
+  color: #999;
+}
+
+.upload-photo-div {
+  position: relative;
+  // background-color: green;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.choose-photo {
+  position: relative;
+}
+
+#file {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+::-webkit-file-upload-button { cursor:pointer; }
+
+#chosen-file {
+  height: 100%;
+}
+
+#file, #chosen-file:hover {
+  cursor: pointer;
+}
+
+
+.button-modal, .no-click{
+  text-align: center;
+  font-size: 16px;
+  line-height: 50px;
+  height: 50px;
+  width: 510px;
+  position: relative;
+}
+
+.button-modal {
+  color: $gray-link;
+  background-color: white;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.profile-photo-modal > ul > li {
+  border-bottom: 1px solid $separator-gray;
+}
+
+.profile-photo-modal > ul > li:last-child {
+  border-bottom: 0px solid $separator-gray;
+}
+
+.button-modal:hover {
+  background-color: #efefef
+}
+
+.exit {
+  // border: 1px solid $gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 2px 2px 0 0;
+  padding: 5px 10px;
+  z-index: 1;
+}

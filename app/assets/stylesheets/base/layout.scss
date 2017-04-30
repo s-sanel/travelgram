@@ -113,3 +113,14 @@ a:active {
   display: flex;
   justify-content: center;
 }
+
+.exit-modal-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-weight: bold;
+  margin: 15px 15px 0 0;
+  width: 17px;
+  z-index: 12;
+}

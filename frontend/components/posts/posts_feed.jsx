@@ -26,7 +26,7 @@ class PostsFeed extends React.Component {
         <h2>&nbsp;</h2>
         <ul>
           {
-            this.props.posts.map(post => (
+            this.props.posts.slice(0,5).map(post => (
               <PostItem
                 key={post.id}
                 post={post}

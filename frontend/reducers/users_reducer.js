@@ -15,11 +15,11 @@ const UsersReducer = (oldState = {}, action) => {
       // return action.user;
       return merge({}, oldState, action.user);
     case RECEIVE_FOLLOW:
-      let copyAddFollow = Object.assign({}, oldState);
+      let copyAddFollow = merge({}, oldState);
       copyAddFollow.followers.push(action.follow.follower);
       return copyAddFollow;
     case REMOVE_FOLLOW:
-      let copyRemFollow = Object.assign({}, oldState);
+      let copyRemFollow = merge({}, oldState);
       let followeeIndex = getIndexById(copyRemFollow.followers, action.follow.follower_id);
       copyRemFollow.followers.splice(followeeIndex, 1);
       return copyRemFollow;

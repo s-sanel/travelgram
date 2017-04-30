@@ -25,7 +25,6 @@ class Api::UsersController < ApplicationController
   def update
     update_params = user_params
     update_params = user_params_no_image if params[:user][:image] == "null"
-
     @user = User.find(params[:id])
     if @user.update(update_params)
       render @user

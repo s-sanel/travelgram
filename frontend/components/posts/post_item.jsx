@@ -65,7 +65,6 @@ class PostItem extends React.Component {
   incrementCommentCount(){
     let current = this.state.comment_count;
     this.setState({comment_count: current+1})
-    debugger
   }
 
   renderShowMoreComments(){
