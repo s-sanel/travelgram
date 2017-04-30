@@ -121,3 +121,20 @@
   font-size: 14px;
   font-weight: 600;
 }
+
+.input-file {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  opacity: 0;
+  // background-color: green;
+}
+
+.edit-profile {
+  overflow: hidden;
+  // background-color: red;
+  position: relative;
+}

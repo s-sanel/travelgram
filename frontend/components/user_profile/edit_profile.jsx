@@ -77,14 +77,16 @@ class EditProfile extends React.Component {
             </div>
             <div className="edit-profile-data">
 
-              <input type="file" onChange={this.updateFile} name="change photo"/>
               <div className="edit-profile-form-header">
 
                 <aside className="edit-profile-header-img">
 
-                    <img src={profile_photo} width="40px" height="40px" title="profile img"/>
-                    <img src={this.state.imageUrl} className="" width="40px" height="40px" />
+                    <div className="edit-profile">
+                      <input className="input-file" type="file" onChange={this.updateFile} name="change photo"/>
 
+                      <img src={profile_photo} width="45px" height="45px" title="profile img"/>
+                      <img src={this.state.imageUrl} className="" width="45px" height="45px" />
+                    </div>
                 </aside>
                 <div className="edit-profile-header-name">
                   {this.props.currentUser.username}
