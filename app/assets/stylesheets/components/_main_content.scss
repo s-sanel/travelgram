@@ -112,10 +112,10 @@
 
 .search-form input[type=text]:focus {
     // width: 100%;
+    background-color: $white;
 }
 
 .search-form {
-
   height: 30px;
 }
 
@@ -125,6 +125,7 @@
   background-position:5px 3px;
   background-repeat: no-repeat;
 
+  background-color: $lightest-gray;
   border: solid 1px #dbdbdb;
   border-radius: 3px;
   color: $gray-link;

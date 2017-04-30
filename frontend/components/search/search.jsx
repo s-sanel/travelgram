@@ -18,7 +18,7 @@ class Search extends React.Component {
 
   handleClick(e) {
     if (this.state.query) {
-      this.setState({ active: false });
+      this.setState({ active: false, query: ""});
     }
   }
 
@@ -32,7 +32,7 @@ class Search extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.user !== nextProps.user) {
-      this.setState({ body: '' });
+      this.setState({ query: '' });
     }
   }
 
@@ -87,7 +87,7 @@ class Search extends React.Component {
 
   return (
     <div className="search">
-      <form className="search-form">
+      <form className="search-form" autocomplete="off">
         <input type="text" name="search" placeholder="Search.."
           value={this.state.query} onChange={this.handleInput}/>
       </form>

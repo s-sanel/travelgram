@@ -42,7 +42,7 @@ class FollowsModal extends React.Component {
 
     return(
       <div className="">
-        <Link onClick={this.openModal} className="">
+        <Link onClick={this.openModal} className="user-profile-follows">
           {this.props.followers.length} followers
         </Link>
 
@@ -71,7 +71,7 @@ class FollowsModal extends React.Component {
 
     return(
       <div className="">
-        <Link onClick={this.openModal} className="">
+        <Link onClick={this.openModal} className="user-profile-follows">
           {this.props.followees.length} following
         </Link>
 
