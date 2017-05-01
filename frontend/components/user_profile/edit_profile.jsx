@@ -8,8 +8,6 @@ import { Link, withRouter } from 'react-router';
 class EditProfile extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {name: "", username: "", website: "", bio: "test bio"};
-    // this.state = this.props.user;
     this.state = {
       name: this.props.user.name,
       username: this.props.user.username,
@@ -49,12 +47,6 @@ class EditProfile extends React.Component {
     formData.append("user[image]", this.state.imageFile);
     this.props.updateUser(formData).then(() => this.props.router.push(`/users/${this.props.user.id}`));
   }
-
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   const user = this.state;
-  //   this.props.updateUser(user).then(() => this.props.router.push(`/users/${this.props.user.id}`));
-  // }
 
   update(field) {
     return e => this.setState({

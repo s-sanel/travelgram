@@ -10,7 +10,4 @@ const App = ({ children }) => (
   </section>
 );
 
-// <section className="data-root">
-// </section>
-// <GreetingContainer />
 export default App;

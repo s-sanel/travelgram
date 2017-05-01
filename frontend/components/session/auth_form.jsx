@@ -155,6 +155,5 @@ class AuthForm extends React.Component {
     }
 
 }
-// <ErrorList errors={ this.props.errors.username } /><br/>
-// <ErrorList errors={ this.props.errors.username } /><br/>
+
 export default withRouter(AuthForm);

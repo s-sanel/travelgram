@@ -1,6 +1,5 @@
 .modal-post-holder{
   display: flex;
-  // position: relative;
   box-sizing: border-box;
   height: 100%;
 }
@@ -20,7 +19,6 @@
 
 .modal-post-data {
   flex-grow: 1;
-  // width: 35%;
   width: 320px;
   position: relative;
   display: flex;
@@ -60,8 +58,6 @@
 }
 
 .comments-scrollable {
-  // height: auto;
-  // height: 200px;
   overflow-y: scroll;
   height: 100%;
   max-height: calc(100% - 30px);
@@ -69,7 +65,6 @@
 
 .modal-data {
   border-bottom: 1px solid $gray;
-  // height: 78px;
   margin-right: 0;
   padding: 20px 0;
   position: absolute;

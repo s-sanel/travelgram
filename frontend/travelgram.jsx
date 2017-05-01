@@ -15,20 +15,6 @@ import {createFollow, deleteFollow} from './actions/follows_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
-//just for testing!
-  // window.testUser = { user: { username: "test", email: "test@gmail.com", password: "123456" } };
-  // window.login = login;
-  // window.fetchPosts = fetchPosts;
-  // window.createPost = createPost;
-  // window.updatePost = updatePost;
-  // window.fetchUser = fetchUser;
-  // window.selectAllUsers = selectAllUsers;
-  // window.selectUserPosts = selectUserPosts;
-  // window.createFollow = createFollow;
-  // window.deleteFollow = deleteFollow;
-//just for testing!
-
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
@@ -36,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
-  // window.store = store;
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

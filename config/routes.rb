@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     # comments nested under posts
 
-    resources :follows, only: [:create, :destroy]
+    resources :follows, only: [:create, :destroy, :show]
     get "follows/delete", to: "follows#delete"
 
     resources :search_results, only: [:index]

@@ -131,7 +131,6 @@ class UserProfileDetails extends React.Component {
           <div className="profile-data-username">
             <span className="profile-name">{this.props.user.username}</span>
             {this.followingOrEditButton()}
-            <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>
           </div>
 
           <div className="profile-data-stats">
@@ -162,10 +161,6 @@ class UserProfileDetails extends React.Component {
     );
   }
 }
-
 export default withRouter(UserProfileDetails);
 
-
-
-
-// <img src={profile_photo} width="150px" height="150px" title="profile img"/>
+// <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>

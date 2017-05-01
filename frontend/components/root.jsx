@@ -8,7 +8,6 @@ import EditProfileContainer from './user_profile/edit_profile_container';
 import UploadPostContainer from './posts/upload_post_container';
 
 import Posts from './posts/posts';
-// import PostsFeed from './posts_feed';
 
 const Root = ({ store }) => {
 
@@ -43,7 +42,4 @@ const Root = ({ store }) => {
   )
 };
 
-// <Route path="/posts" component={TestPosts} onEnter={_ensureLoggedIn}/>
-// <Route path="/test" component={Test} onEnter={_ensureLoggedIn}/>
-// <IndexRoute component={ PostsFeed } onEnter={redirectUnlessLoggedIn} />
 export default Root;

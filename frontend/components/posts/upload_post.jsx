@@ -43,10 +43,7 @@ class UploadPost extends React.Component {
   }
 
   render() {
-    //
-    // if(this.props.currentUser.username) {
-    //   return <h1>loadin....</h1>;
-    // }
+
     return (
       <div className="data-root">
         <NavBar />

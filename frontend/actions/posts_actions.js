@@ -31,9 +31,6 @@ export const fetchPosts = () => {
   };
 };
 
-// export const fetchPostsssssss = () => dispatch => (
-//   PostApiUtil.fetchPosts().then(posts => dispatch(receiveAllPosts(posts)))
-// );
 
 export const fetchPost = id => dispatch => (
   PostApiUtil.fetchPost(id).then(post => dispatch(receivePost(post)))

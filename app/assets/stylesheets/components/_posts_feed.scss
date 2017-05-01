@@ -11,7 +11,6 @@
   flex-direction: column;
   align-items: stretch;
   margin-bottom: 20px;
-  // padding: 10px;
 }
 
 
@@ -20,7 +19,6 @@
   margin: 0 auto;
   max-width: 600px;
   width: 100%;
-  // box-sizing: border-box;
 }
 
 .post-header{
@@ -41,12 +39,10 @@
 .post-image-holder {
   box-sizing: border-box;
   padding: 0px;
-  // display: flex;
   cursor: pointer;
 }
 
 .post-image-holder:hover {
-  // opacity: 0.9;
 }
 
 .gray-link{
@@ -82,11 +78,6 @@
 }
 
 .post-footer-icons a:hover {
-  // color:$dark-gray;
-  // -webkit-transition: color 0.2s ease-out;
-  // -moz-transition: color 0.2s ease-out;
-  // -o-transition: color 0.2s ease-out;
-  // transition: color 0.2s ease-out;
 }
 
 .post-footer-likes {
@@ -99,7 +90,6 @@
 
 .post-footer-items {
   padding: 8px 0;
-  // margin: 5px 0;
 }
 
 .load-more-comments {

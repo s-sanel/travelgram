@@ -1,5 +1,8 @@
 class Api::FollowsController < ApplicationController
 
+  def show
+    # @follow = Follow.includes(:)
+  end
   def create
     @follow = Follow.new(follow_params)
     if @follow.save

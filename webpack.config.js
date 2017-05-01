@@ -1,5 +1,3 @@
-// var path = require("path");
-// webpack.config.js
 var path = require("path");
 var webpack = require("webpack");
 

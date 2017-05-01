@@ -48,5 +48,4 @@ class NavLinks extends React.Component {
     }
 
 }
-// <i className="fa fa-compass" aria-hidden="true"></i>
 export default withRouter(NavLinks);

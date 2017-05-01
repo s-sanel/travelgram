@@ -10,6 +10,5 @@ export const deleteComment = (id) => {
   return $.ajax({
     method: "DELETE",
     url: `/api/comments/${id}`
-    // data: {like: {post_id}}
   });
 };
