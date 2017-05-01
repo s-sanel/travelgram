@@ -12,6 +12,7 @@ class Api::PostsController < ApplicationController
       user = current_user
       @posts = Post.where(user: users_array).includes(:comments).order('comments.created_at') #.order(created_at: :desc).page(params[:page]).per(5)
       render :index
+      # @posts = Post.where(user: current_user.followees).includes(:comments).order('comments.created_at') #.order(created_at: :desc).page(params[:page]).per(5)
     end
   end
 

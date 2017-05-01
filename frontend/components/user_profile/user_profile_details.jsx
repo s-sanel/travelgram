@@ -28,9 +28,9 @@ class UserProfileDetails extends React.Component {
 
   componentDidMount(){}
   componentWillReceiveProps(newProps){
-    if(this.props.user.id != newProps.user.id){
-      this.props.fetchUser(newProps.user.id);
-    }
+    // if(this.props.user.id != newProps.user.id){
+    //   this.props.fetchUser(newProps.user.id);
+    // }
   }
 
   redirectToEdit(){

@@ -86,11 +86,11 @@ class PostItem extends React.Component {
     return(
       <article className="post-box">
         <header className="post-header">
-          <Link onClick={this.profilePage} className="">
+          <Link onClick={this.profilePage} className="pointer">
             <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="30px" height="30px" />
           </Link> &nbsp;
           <div className="post-header-data">
-            <Link onClick={this.profilePage} className="gray-link">
+            <Link onClick={this.profilePage} className="gray-link pointer">
               {this.props.post.user.username}
             </Link>
           </div>
