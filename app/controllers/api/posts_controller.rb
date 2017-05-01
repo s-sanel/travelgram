@@ -2,8 +2,17 @@ class Api::PostsController < ApplicationController
 
   def index
     # sleep 1
-    @posts = Post.all
-    render :index
+    # @posts = Post.all
+    # render :index
+    if current_user
+      users_array = [current_user]
+      current_user.followees.each do |user|
+        users_array << user
+      end
+      user = current_user
+      @posts = Post.where(user: users_array) #.order(created_at: :desc).page(params[:page]).per(5)
+      render :index
+    end
   end
 
   def show

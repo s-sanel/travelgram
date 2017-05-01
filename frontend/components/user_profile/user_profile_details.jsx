@@ -48,7 +48,6 @@ class UserProfileDetails extends React.Component {
   }
 
   openProfilePhotoModal(){
-    console.log("open modallll");
     this.setState({profilePhotoModalIsOpen: true});
   }
 
