@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
         users_array << user
       end
       user = current_user
-      @posts = Post.where(user: users_array) #.order(created_at: :desc).page(params[:page]).per(5)
+      @posts = Post.where(user: users_array).includes(:comments).order('comments.created_at') #.order(created_at: :desc).page(params[:page]).per(5)
       render :index
     end
   end

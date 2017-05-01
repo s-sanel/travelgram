@@ -32,17 +32,17 @@ class NavLinks extends React.Component {
             </a>
           </div>
           <div className="upload-photo">
-            <Link onClick={this.uploadPost} title="Upload photo">
+            <Link onClick={this.uploadPost} title="Upload photo" className="pointer">
               <i className="fa fa-camera" aria-hidden="true"></i>
             </Link>
           </div>
           <div className="main-nav-user">
-            <Link onClick={this.profilePage} title="Profile page">
+            <Link onClick={this.profilePage} title="Profile page" className="pointer">
               <i className="fa fa-user-o" aria-hidden="true"></i>
             </Link>
           </div>
           <div className="main-nav-logout">
-            <Link onClick={this.handleLogout} title="Logout"><i className="fa fa-sign-out" aria-hidden="true"></i></Link>
+            <Link onClick={this.handleLogout} title="Logout" className="pointer"><i className="fa fa-sign-out" aria-hidden="true"></i></Link>
           </div>
         </div>);
     }

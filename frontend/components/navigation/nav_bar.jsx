@@ -30,8 +30,8 @@ class NavBar extends React.Component {
           <div className="main-nav-bar-max-width">
             <nav className="main-nav-bar">
               <div className="main-nav-logo">
-                <Link onClick={this.homePageNav}><i className="fa fa-instagram" aria-hidden="true"></i></Link>
-              <Link onClick={this.homePageNav}>
+                <Link onClick={this.homePageNav} className="pointer"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+              <Link onClick={this.homePageNav} className="pointer">
                 <div className="main-nav-logo-text">Travelgram</div>
             </Link>
               </div>

@@ -87,7 +87,7 @@ class Search extends React.Component {
 
   return (
     <div className="search">
-      <form className="search-form" autocomplete="off">
+      <form className="search-form" autoComplete="off">
         <input type="text" name="search" placeholder="Search.."
           value={this.state.query} onChange={this.handleInput}/>
       </form>
