@@ -16,9 +16,7 @@ class PostItem extends React.Component {
 
   componentDidMount(){}
 
-  componentWillReceiveProps(newProps){
-    debugger
-  }
+  componentWillReceiveProps(newProps){}
 
   profilePage(){
     let id = this.props.post.user.id;
@@ -60,13 +58,11 @@ class PostItem extends React.Component {
   }
 
   showMoreComments(){
-    debugger
     let current = this.state.comment_count;
     this.setState({comment_count: current + 5 });
   }
 
   incrementCommentCount(){
-    debugger
     let current = this.state.comment_count;
     this.setState({comment_count: current+1})
   }
@@ -86,7 +82,7 @@ class PostItem extends React.Component {
     let comm = "input-comment-" + post_id;
     let start = this.props.post.comments.length - this.state.comment_count;
     if (start < 0) start = 0;
-debugger
+
     return(
       <article className="post-box">
         <header className="post-header">

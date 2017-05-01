@@ -43,7 +43,7 @@ class UserProfile extends React.Component {
               posts={this.props.posts}
               user={this.props.user}
               currentUser={this.props.currentUser}
-              updateUser={this.props.updateUser} 
+              updateUser={this.props.updateUser}
               fetchUser={this.props.fetchUser}/>
 
               <div className="user-profile-gallery">
