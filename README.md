@@ -31,7 +31,7 @@ As the user types in the search bar, a list of users matching the input are fetc
 ### Likes and Comments
 Users can like and unlike any post by clicking on the heart icon which color indicates action. Same action can be done with double click on the posts image.
 User can post a comment by clicking on a cloud icon which gives focus to an input field and when user start typing comment can be submitted.
-
+On the each post on the posts feed page, only last three comments are displayed by default. User can choose to see more comments by clicking on text `load more comments` which every time displays five more latest comments.
 
 ### Follows
 
