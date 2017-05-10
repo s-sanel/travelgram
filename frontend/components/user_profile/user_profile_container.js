@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     posts: selectUserPosts(state, ownProps.params.user_id),
     // posts: Object.keys(state.posts).map(id => state.posts[id])
+    // posts2: state.user.posts,
     user: state.user,
     currentUser: state.session.currentUser
   };

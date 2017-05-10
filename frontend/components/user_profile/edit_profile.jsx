@@ -9,6 +9,7 @@ class EditProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      profile_photo: this.props.user.profile_photo,
       name: this.props.user.name,
       username: this.props.user.username,
       bio: this.props.user.bio,
@@ -21,6 +22,7 @@ class EditProfile extends React.Component {
   }
 
   componentDidMount(){
+      // this.props.fetchUser(parseInt(this.props.params.user_id));
   }
 
   componentWillReceiveProps(newProps){
@@ -55,7 +57,8 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    let profile_photo = this.props.currentUser ? this.props.currentUser.profile_photo : "";
+    // let profile_photo = this.props.currentUser ? this.props.currentUser.profile_photo : "";
+    let profile_photo = this.state.profile_photo;
 
     return (
       <div className="data-root">
