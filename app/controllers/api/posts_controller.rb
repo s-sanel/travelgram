@@ -1,9 +1,8 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # sleep 1
     # @posts = Post.all
-    @posts = Post.includes(:user).includes(:comments).includes(:likes).all
+    @posts = Post.includes(:user, :comments, :likes).all
     render :index
     # if current_user
     #   users_array = [current_user]
@@ -18,11 +17,11 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:user, :comments, :likes).find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.includes(:user, :comments, :likes).find(params[:id])
   end
 
 

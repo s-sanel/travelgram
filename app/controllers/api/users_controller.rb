@@ -1,11 +1,13 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.includes(:followers).includes(:followees).all
+    # @users = User.all
+    @users = User.includes(:posts, :followers, :followees).all
   end
 
   def show
-    @user = User.includes(:followers).includes(:followees).find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.includes(:posts, :followers, :followees).find(params[:id])
   end
 
   def edit

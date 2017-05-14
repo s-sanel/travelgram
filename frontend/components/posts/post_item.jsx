@@ -19,7 +19,7 @@ class PostItem extends React.Component {
   componentWillReceiveProps(newProps){}
 
   profilePage(){
-    let id = this.props.post.user.id;
+    let id = this.props.post.user_id;
     this.props.router.push(`users/${id}`);
   }
 
@@ -87,11 +87,11 @@ class PostItem extends React.Component {
       <article className="post-box">
         <header className="post-header">
           <Link onClick={this.profilePage} className="pointer">
-            <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="30px" height="30px" />
+            <img src={this.props.post.user_profile_photo} alt="img" className="img-circle" width="30px" height="30px" />
           </Link> &nbsp;
           <div className="post-header-data">
             <Link onClick={this.profilePage} className="gray-link pointer">
-              {this.props.post.user.username}
+              {this.props.post.username}
             </Link>
           </div>
         </header>
@@ -115,7 +115,7 @@ class PostItem extends React.Component {
           </section>
 
           <div>
-            <span className="bold">{this.props.post.user.username}</span>  {this.props.post.description}
+            <span className="bold">{this.props.post.username}</span>  {this.props.post.description}
           </div>
 
           <section className="post-footer-items">

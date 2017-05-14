@@ -50,7 +50,8 @@ class PostItemModalData extends React.Component {
   render(){
     let post_id = this.props.post.id;
     let comm = "input-comment-" + post_id;
-    let followContainer = this.props.post.user.id == this.props.currentUser.id ? "" : <FollowContainer />;
+    // let followContainer = this.props.post.user.id == this.props.currentUser.id ? "" : <FollowContainer />;
+    let followContainer = this.props.post.user_id == this.props.currentUser.id ? "" : <FollowContainer />;
 
     return(
       <article className="modal-post-holder">
@@ -65,11 +66,11 @@ class PostItemModalData extends React.Component {
 
             <header className="post-header item-header">
               <Link onClick={this.props.closeModal} className="">
-                <img src={this.props.post.user.profile_photo} alt="img" className="img-circle" width="40px" height="40px" />
+                <img src={this.props.post.user_profile_photo} alt="img" className="img-circle" width="40px" height="40px" />
               </Link> &nbsp;
               <div className="post-header-data">
                 <Link onClick={this.props.closeModal} className="gray-link">
-                  {this.props.post.user.username}
+                  {this.props.post.username}
                 </Link>
               </div>
               <div>
@@ -79,7 +80,7 @@ class PostItemModalData extends React.Component {
 
             <section className="single-post-footer-items">
               <div>
-                <span className="bold">{this.props.post.user.username}</span>  {this.props.post.description}
+                <span className="bold">{this.props.post.username}</span>  {this.props.post.description}
               </div>
               <ul className="">
                 {

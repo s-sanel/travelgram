@@ -12,7 +12,9 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchPosts();
+    if(!this.props.posts){
+      this.props.fetchPosts();
+    }
     this.props.fetchUser(parseInt(this.props.params.user_id));
   }
 

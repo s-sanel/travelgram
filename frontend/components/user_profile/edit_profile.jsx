@@ -12,8 +12,8 @@ class EditProfile extends React.Component {
       profile_photo: this.props.user.profile_photo,
       name: this.props.user.name,
       username: this.props.user.username,
-      bio: this.props.user.bio,
-      website: this.props.user.website,
+      bio: this.props.user.bio || "",
+      website: this.props.user.website || "",
       imageFile: null,
       imageUrl: null
     };
