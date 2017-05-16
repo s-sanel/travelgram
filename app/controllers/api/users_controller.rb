@@ -1,12 +1,10 @@
 class Api::UsersController < ApplicationController
 
   def index
-    # @users = User.all
     @users = User.includes(:posts, :followers, :followees).all
   end
 
   def show
-    # @user = User.find(params[:id])
     @user = User.includes(:posts, :followers, :followees).find(params[:id])
   end
 
@@ -30,7 +28,6 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(update_params)
       render @user
-      # "api/users/show"
     else
       render json: @user.errors, status: 422
     end

@@ -7,7 +7,6 @@ class UserProfilePosts extends React.Component {
     super(props);
   }
 
-
   render(){
     return(
       <div className="user-profile-gallery">

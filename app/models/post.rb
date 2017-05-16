@@ -15,7 +15,6 @@
 #
 
 class Post < ApplicationRecord
-  # validates :url, presence: true
   validates :user_id, presence: true
 
   has_attached_file :image, default_url: "beach.jpg"

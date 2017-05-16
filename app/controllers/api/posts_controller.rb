@@ -1,7 +1,6 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # @posts = Post.all
     @posts = Post.includes(:user, :comments, :likes).all
     render :index
     # if current_user
