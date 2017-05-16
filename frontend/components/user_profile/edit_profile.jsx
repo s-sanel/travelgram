@@ -37,6 +37,7 @@ class EditProfile extends React.Component {
 
 
   handleSubmit(e){
+    e.preventDefault();
     let formData = new FormData();
     formData.append("user[id]", this.props.user.id);
     formData.append("user[name]", this.state.name);
