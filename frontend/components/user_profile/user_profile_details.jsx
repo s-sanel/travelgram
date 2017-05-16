@@ -162,5 +162,3 @@ class UserProfileDetails extends React.Component {
   }
 }
 export default withRouter(UserProfileDetails);
-
-// <Link className="gear"><i className="fa fa-cog" aria-hidden="true"></i></Link>

@@ -43,14 +43,11 @@ class UploadPost extends React.Component {
   }
 
   render() {
-
     return (
       <div className="data-root">
         <NavBar />
         <div className="upload-post-main">
-          <div className="">
-
-          </div>
+          <div className=""></div>
 
           <form className="upload-post-article">
             <div className="upload-post-preview">

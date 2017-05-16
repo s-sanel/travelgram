@@ -33,7 +33,6 @@ class PostItemModal extends React.Component {
   componentDidMount(){}
   componentWillReceiveProps(){}
 
-
   render(){
     return(
       <div className="user-profile-image-holder">
@@ -50,8 +49,7 @@ class PostItemModal extends React.Component {
           onRequestClose={this.closeModal}
           style={ModalStyle}
           onAfterOpen={this.onModalOpen}
-          contentLabel="Modal"
-          >
+          contentLabel="Modal">
           <Link onClick={this.closeModal} className="modal-close-btn"><i className="fa fa-times-circle" aria-hidden="true"></i></Link>
           <PostItemModalData
             key={this.props.post.id}
@@ -62,9 +60,7 @@ class PostItemModal extends React.Component {
             deleteLike={this.props.deleteLike}
             createComment={this.props.createComment}
             deleteComment={this.props.deleteComment}
-            closeModal={this.closeModal}
-          />
-
+            closeModal={this.closeModal} />
          </Modal>
       </div>
     );

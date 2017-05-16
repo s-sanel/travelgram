@@ -8,7 +8,6 @@ import PostItemModalContainer from '../posts/modal/post_item_modal_container';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount(){

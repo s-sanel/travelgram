@@ -6,7 +6,6 @@ import AddCommentForm from './add_comment_form';
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = { comment_count: 3}
     this.profilePage = this.profilePage.bind(this);
     this.likeAction = this.likeAction.bind(this);
@@ -143,7 +142,6 @@ class PostItem extends React.Component {
             createComment={this.props.createComment}
             incrementCommentCount={this.incrementCommentCount}
           />
-
 
         </div>
       </article>

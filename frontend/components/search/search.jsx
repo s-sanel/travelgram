@@ -59,7 +59,6 @@ class Search extends React.Component {
       return(
         this.props.searchResults.map((user) =>
           <SearchResultItem key={user.id} user={user} closeResultsList={this.closeResultsList}/>)
-
       )
     }else {
       return <div className="search-no-results"><span>No results found.</span></div>
@@ -67,36 +66,31 @@ class Search extends React.Component {
   }
 
   render() {
+    let resultsList = ""
+    if( this.state.active) {
+      resultsList =
+        <div className="search-results">
+          <div className="triangle">
+            <div className="empty"></div>
+          </div>
 
+          <ul className="search-results-list">
+            {this.renderResults()}
+          </ul>
 
-
-  let resultsList = ""
-  if( this.state.active) {
-    resultsList =
-      <div className="search-results">
-        <div className="triangle">
-          <div className="empty"></div>
-        </div>
-
-        <ul className="search-results-list">
-          {this.renderResults()}
-        </ul>
-
-      </div>;
+        </div>;
     }
 
-  return (
-    <div className="search">
-      <form className="search-form" autoComplete="off">
-        <input type="text" name="search" placeholder="Search users..."
-          value={this.state.query} onChange={this.handleInput}/>
-      </form>
+    return (
+      <div className="search">
+        <form className="search-form" autoComplete="off">
+          <input type="text" name="search" placeholder="Search users..."
+            value={this.state.query} onChange={this.handleInput}/>
+        </form>
 
-      {resultsList}
+        {resultsList}
       </div>
     );
-
-
   }
 
 }

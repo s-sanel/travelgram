@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-
 const mapDispatchToProps = (dispatch) => {
   return ({
     logout: () => dispatch(logout())

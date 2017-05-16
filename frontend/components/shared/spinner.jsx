@@ -6,5 +6,4 @@ export default function Spinner() {
       <div className="loader"></div>
     </div>
   );
-
 }

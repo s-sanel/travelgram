@@ -15,10 +15,7 @@ class SearchResultItem extends React.Component {
     this.props.closeResultsList();
   }
 
-
   render() {
-
-
     return (
       <li className="search-results-list-item">
         <Link onClick={this.profilePage} className="search-results-item">
@@ -32,7 +29,6 @@ class SearchResultItem extends React.Component {
         </Link>
       </li>
     );
-
   }
 
 }

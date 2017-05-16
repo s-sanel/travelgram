@@ -21,12 +21,9 @@ class EditProfile extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-      // this.props.fetchUser(parseInt(this.props.params.user_id));
-  }
+  componentDidMount(){}
 
-  componentWillReceiveProps(newProps){
-  }
+  componentWillReceiveProps(newProps){}
 
   updateFile(e) {
     let file = e.currentTarget.files[0];
@@ -57,7 +54,6 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    // let profile_photo = this.props.currentUser ? this.props.currentUser.profile_photo : "";
     let profile_photo = this.state.profile_photo;
 
     return (
@@ -71,22 +67,17 @@ class EditProfile extends React.Component {
               </div>
             </div>
             <div className="edit-profile-data">
-
               <div className="edit-profile-form-header">
-
                 <aside className="edit-profile-header-img">
-
-                    <div className="edit-profile">
-                      <input className="input-file" type="file" onChange={this.updateFile} name="change photo"/>
-
-                      <img src={profile_photo} width="45px" height="45px" title="profile img"/>
-                      <img src={this.state.imageUrl} className="" width="45px" height="45px" />
-                    </div>
+                  <div className="edit-profile">
+                    <input className="input-file" type="file" onChange={this.updateFile} name="change photo"/>
+                    <img src={profile_photo} width="45px" height="45px" title="profile img"/>
+                    <img src={this.state.imageUrl} className="" width="45px" height="45px" />
+                  </div>
                 </aside>
                 <div className="edit-profile-header-name">
                   {this.props.currentUser.username}
                 </div>
-
               </div>
 
               <form className="edit-profile-form" onSubmit={this.handleSubmit}>
@@ -127,7 +118,6 @@ class EditProfile extends React.Component {
                 </div>
 
               </form>
-
             </div>
           </article>
         </div>
@@ -136,6 +126,5 @@ class EditProfile extends React.Component {
   }
 
 }
-
 
 export default EditProfile;

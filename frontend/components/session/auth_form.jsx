@@ -2,9 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import ErrorList from '../shared/error_list';
 
-
 class AuthForm extends React.Component {
-
     constructor(props) {
       super(props);
       this.state = {username: "", password: "", email: "", name: ""};
@@ -87,7 +85,6 @@ class AuthForm extends React.Component {
   	}
 
     render() {
-      // this.props.route.path vs this.props.formType
       if (this.props.formType === "signup") {
         return(
           <article className="landing-page-main">
@@ -151,7 +148,6 @@ class AuthForm extends React.Component {
           </article>
         );
       }
-
     }
 
 }
