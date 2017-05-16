@@ -6,11 +6,9 @@ import AuthFormContainer from './session/auth_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import EditProfileContainer from './user_profile/edit_profile_container';
 import UploadPostContainer from './posts/upload_post_container';
-
 import Posts from './posts/posts';
 
 const Root = ({ store }) => {
-
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
@@ -35,7 +33,6 @@ const Root = ({ store }) => {
           <Route path="users/:user_id" component={UserProfileContainer} onEnter={_ensureLoggedIn} />
           <Route path="users/:user_id/edit" component={EditProfileContainer} onEnter={_ensureLoggedIn} />
           <Route path="/upload-post" component={UploadPostContainer} onEnter={_ensureLoggedIn} />
-
         </Route>
       </Router>
     </Provider>

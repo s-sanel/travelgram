@@ -5,7 +5,6 @@ import UsersReducer from './users_reducer';
 import FetchingReducer from './fetching_reducer';
 import SearchResultsReducer from './search_reducer';
 
-
 const rootReducer = combineReducers({
   session: SessionReducer,
   posts: PostsReducer,

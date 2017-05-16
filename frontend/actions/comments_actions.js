@@ -1,5 +1,4 @@
 import * as CommentApiUtil from "../util/comments_api_util";
-
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
