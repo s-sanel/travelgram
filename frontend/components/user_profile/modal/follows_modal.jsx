@@ -101,7 +101,7 @@ class FollowsModal extends React.Component {
             contentLabel="Modal"
             >
             <div className="follows-modal">
-              <div className="follows-list-header">Followers</div>
+              <div className="follows-list-header">Following</div>
               <ul className="follows-list">
                 {
                 this.props.followees.map( follower => (
