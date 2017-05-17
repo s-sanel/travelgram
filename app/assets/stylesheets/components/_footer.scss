@@ -1,0 +1,34 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.footer-content {
+  flex: 1;
+  max-width: 1010px;
+  margin: 0 auto;
+  color: $gray-link;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.links {
+  color: $footer-text;
+  text-transform: uppercase;
+  font-weight: 600px;
+}
+
+.mark {
+  color: $gray;
+}
+
+.footer-nav {
+  display: flex;
+}
+
+.footer-nav li {
+  margin-right: 10px;
+}
