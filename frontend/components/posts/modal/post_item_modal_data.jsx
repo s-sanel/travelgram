@@ -116,18 +116,10 @@ class PostItemModalData extends React.Component {
                   createComment={this.props.createComment}/>
               </div>
              </div>
-
-
-
-
            </div>
         </div>
-
       </article>
-
-
     );
-
   }
 }
 

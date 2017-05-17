@@ -50,7 +50,7 @@ class PostItemModal extends React.Component {
           style={ModalStyle}
           onAfterOpen={this.onModalOpen}
           contentLabel="Modal">
-          <Link onClick={this.closeModal} className="modal-close-btn"><i className="fa fa-times-circle" aria-hidden="true"></i></Link>
+          <Link onClick={this.closeModal} className="modal-close-btn"></Link>
           <PostItemModalData
             key={this.props.post.id}
             post={this.props.post}
