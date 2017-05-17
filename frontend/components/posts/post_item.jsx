@@ -96,7 +96,7 @@ class PostItem extends React.Component {
         </header>
 
         <div className="post-image-holder" onDoubleClick={this.likeAction}>
-          <img className="responsive-image" src={this.props.post.url} alt={this.props.post.url} height="300px" width="100%"/>
+          <img className="responsive-image" src={this.props.post.url_large} alt={this.props.post.url} height="300px" width="100%"/>
         </div>
 
         <div className="post-footer">

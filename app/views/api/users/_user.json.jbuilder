@@ -1,9 +1,7 @@
 json.extract! user, :id, :username, :name, :email, :bio, :website
 json.profile_photo asset_path(user.image.url)
 
-# json.followers user.followers
-# json.followees user.followees
-
+# json.posts_c user.posts
 
 json.followers user.follows_as_followee.each do |follow|
   json.extract! follow.follower, :id, :username

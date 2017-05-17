@@ -1,22 +1,19 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:user, :comments, :likes).all
+    # @posts = Post.where(user: current_user.followees).includes(:comments => [:user]).includes(:user, :likes).order(created_at: :desc).limit(2)
+    @posts = Post.includes(:comments => [:user]).includes(:user, :likes).order(created_at: :desc)
     render :index
-    # if current_user
-    #   users_array = [current_user]
-    #   current_user.followees.each do |user|
-    #     users_array << user
-    #   end
-    #   user = current_user
-    #   @posts = Post.where(user: users_array).includes(:comments).order('comments.created_at') #.order(created_at: :desc).page(params[:page]).per(5)
-    #   render :index
-    #   # @posts = Post.where(user: current_user.followees).includes(:comments).order('comments.created_at') #.order(created_at: :desc).page(params[:page]).per(5)
-    # end
+
+    # followees = current_user.followees
+    # followees.map { |followee| followee.id }
+    # @posts = Post.where(user_id: followees).includes(:user, comments: :user, likes: :user).order('created_at DESC')
+
   end
 
   def show
-    @post = Post.includes(:user, :comments, :likes).find(params[:id])
+    # @post = Post.includes(:user, :comments, :likes).find(params[:id])
+    @posts = Post.includes(:comments => [:user]).includes(:user, :likes).all
   end
 
   def edit

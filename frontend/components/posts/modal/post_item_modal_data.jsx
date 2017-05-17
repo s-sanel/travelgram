@@ -56,7 +56,7 @@ class PostItemModalData extends React.Component {
       <article className="modal-post-holder">
 
         <div className="modal-post-image" onDoubleClick={this.likeAction}>
-          <img className="" width="100%" height="540px" src={this.props.post.url} alt={this.props.post.url} />
+          <img className="" width="100%" height="540px" src={this.props.post.url_large} alt={this.props.post.url} />
         </div>
 
         <div className="a">

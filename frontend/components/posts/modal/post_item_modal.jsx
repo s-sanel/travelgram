@@ -37,7 +37,7 @@ class PostItemModal extends React.Component {
     return(
       <div className="user-profile-image-holder">
         <Link onClick={this.openModal} className="container-image">
-          <img className="img-wrap" src={this.props.post.url} alt={this.props.post.url} height="100%" width="100%"/>
+          <img className="img-wrap" src={this.props.post.url_medium} alt={this.props.post.url} height="100%" width="100%"/>
           <div className="user-profile-image-holder-data">
             <i className="fa fa-comment" aria-hidden="true"></i> {this.props.post.comments.length} &nbsp;
             <i className="fa fa-heart" aria-hidden="true"></i> {this.props.post.likes.length}
