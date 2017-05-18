@@ -17,27 +17,27 @@ Follow.destroy_all
 # Users
 guest = User.create(username: "guest", name:"Sanel Selmanovic",
                     email: "sanel@gmail.com", password: "123456",
-                    image: File.open("app/assets/images/ghost.jpg"),
+                    image: File.open("app/assets/images/avatar-1.png"),
                     bio: "I am a traveler")
 
 pam = User.create(username: "pam360", name:"Priscilla Molina",
                     email: "pam360@gmail.com", password: "password",
-                    image: File.open("app/assets/images/girl-avatar.jpg"),
+                    image: File.open("app/assets/images/avatar-g5.png"),
                     bio: "I am a traveler")
 
 lela = User.create(username: "Leana1121", name:"Leana Selmanovic",
                     email: "Leana1121@gmail.com", password: "password",
-                    image: File.open("app/assets/images/girl-avatar.jpg"),
+                    image: File.open("app/assets/images/avatar-g6.png"),
                     bio: "I am a traveler")
 
 naida = User.create(username: "Naida1606", name:"Naida Sabanovic",
                     email: "Naida1606@gmail.com", password: "password",
-                    image: File.open("app/assets/images/girl-avatar.jpg"),
+                    image: File.open("app/assets/images/avatar-g2.png"),
                     bio: "I am a traveler")
 
 shannon = User.create(username: "Jewel71185", name:"Shannon Farrer",
                     email: "Jewel71185@gmail.com", password: "password",
-                    image: File.open("app/assets/images/girl-avatar.jpg"),
+                    image: File.open("app/assets/images/avatar-g3.png"),
                     bio: "I am a traveler")
 
 enir = User.create(username: "Enir790", name:"Enir Loncarevic",
@@ -52,17 +52,17 @@ pablo = User.create(username: "PabloTour2016", name:"Kanye West",
 
 scarface = User.create(username: "Scarface007", name:"Al Pacino",
                     email: "Scarface007@gmail.com", password: "password",
-                    image: File.open("app/assets/images/ghost.jpg"),
+                    image: File.open("app/assets/images/avatar-2.png"),
                     bio: "I am a traveler")
 
 rocky = User.create(username: "Rocky84", name:"Balboa Fan",
                     email: "Rocky84@gmail.com", password: "password",
-                    image: File.open("app/assets/images/ghost.jpg"),
+                    image: File.open("app/assets/images/avatar-5.png"),
                     bio: "I am a traveler")
 
 george = User.create(username: "George1776", name:"Mr. Washington",
                     email: "George1776@gmail.com", password: "password",
-                    image: File.open("app/assets/images/ghost.jpg"),
+                    image: File.open("app/assets/images/avatar-3.png"),
                     bio: "I am a traveler")
 
 
@@ -132,6 +132,10 @@ Comment.create(body: "No, Astoria. We didn’t have time to make it to the D.C. 
 
 Comment.create(body: "This view just never gets old for any New Yorker", user_id: lela.id, post_id: post20.id)
 Comment.create(body: "Unlike Times Square… which is avoided like the plague", user_id: pam.id, post_id: post20.id)
+Comment.create(body: "Beautiful shot", user_id: shannon.id, post_id: post20.id)
+Comment.create(body: "I agree!!!", user_id: pam.id, post_id: post20.id)
+Comment.create(body: "Superb", user_id: george.id, post_id: post20.id)
+Comment.create(body: "Fantastic shot", user_id: naida.id, post_id: post20.id)
 
 # Comment.create(body: Faker::Friends.unique.quote, user_id: george.id, post_id: post19.id)
 
