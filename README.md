@@ -2,7 +2,7 @@
 
 [Travelgram][heroku]
 
-[heroku]: http://www.travelgram.world/
+[heroku]: https://insta-travelgram.herokuapp.com/#/
 
 Travelgram is a full-stack web application inspired by Instagram. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
